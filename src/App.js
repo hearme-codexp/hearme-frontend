@@ -6,7 +6,7 @@ import Button from './components/Button'
 class App extends Component {
   render() {
     return (
-      <Button className='button' >Test</Button>
+      <Button className='button'>Cadastrar</Button>
       // <div className="App">
       //   <header className="App-header">
       //     <img src={logo} className="App-logo" alt="logo" />
