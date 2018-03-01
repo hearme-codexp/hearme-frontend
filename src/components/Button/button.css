@@ -1,6 +1,5 @@
 .button {
     font-family: 'Robot Condensed#007AF3', sans-serif;
-    border-color: 1px solid white;
     color: white;
     text-align: center;
     border: none;
@@ -22,3 +21,8 @@
     width: 6%;
 }
 
+.button--leaked {
+    border: 1px solid #fff;
+    color: black;
+    background: transparent;
+}
