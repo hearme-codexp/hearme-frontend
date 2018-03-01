@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Button from './components/Button'
 import Input from './components/Input'
 
 class App extends Component {
   render() {
     return (
+      <Button className='button'>Cadastrar</Button>
       <Input type="text" placeholder="nome" className="input input--small"/>
       // <div className="App">
       //   <header className="App-header">
