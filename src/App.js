@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Button from './components/Button'
-import Input from './components/Input'
+import RegisterForm from './components/RegisterForm'
 
 class App extends Component {
   render() {
     return (
-      <Button className='button'>Cadastrar</Button>
-      <Input type="text" placeholder="nome" className="input input--small"/>
+      <RegisterForm className='form'>
+      </RegisterForm>
+    
       // <div className="App">
       //   <header className="App-header">
       //     <img src={logo} className="App-logo" alt="logo" />
