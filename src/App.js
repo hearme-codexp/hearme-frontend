@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import RegisterForm from './components/RegisterForm'
+import Register from './components/Register'
 import logo from './tela-cadastro/logo-hearme-02.png'
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
       // <header className="header">
       //     <img src={logo} width="150"/><
       // </header>
-      <RegisterForm className='form' />
+      <Register className='form' logo={logo} />
       // <div className="App">
       //   <header className="App-header">
       //     <img src={logo} className="App-logo" alt="logo" />

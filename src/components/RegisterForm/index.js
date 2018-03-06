@@ -6,22 +6,22 @@ import Client from '../../Client'
 import axios from 'axios'
 
 class Form extends React.Component {
-    // constructor (props){
-    //     super(props);
+    constructor (props){
+        super(props);
 
         
-    //     this.state = {
-    //         client: new Client()
-    //     }
+        this.state = {
+            client: new Client()
+        }
 
-    //     this.handleSubmit = this.handleSubmit.bind(this);
-    //     this.handleChange = this.handleChange.bind(this);
-    //     this.validate = this.validate.bind(this);
-    // }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.validate = this.validate.bind(this);
+    }
     
-    state = ({
-        client: new Client()
-    });
+    // state = {
+    //     client: new Client()
+    // };
 
     validate() {
         const errors = [];
@@ -38,11 +38,15 @@ class Form extends React.Component {
         const name = event.target.name;
         const value = event.target.value;
         
-        this.setState(prevState => ({client: { ...prevState, [name] : value}}));
+        this.state.client[name] = value;
+        this.setState({client:  this.state.client});
+        // this.setState(prevState => ({client: ...prevState, [name]:value }))
+        // this.setState(prevState => ({client: { [name] : value}}));
     }
 
     handleSubmit(event){
         event.preventDefault();
+        console.log(this.state.client);
 
         let validation = this.validate();
         if(validation.length == 0){
