@@ -15,15 +15,7 @@ class Form extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event) {
-        const name = event.target.name;
-        const value = event.target.value;
-        
-        this.setState(prevState => ({client: { ...prevState, [name] : value}}));
-
-        console.log(this.state.client);
+        this.validate = this.validate.bind(this);
     }
     
     validate() {
@@ -35,6 +27,15 @@ class Form extends React.Component {
         }
 
         return errors;
+    }
+
+    handleChange(event) {
+        const name = event.target.name;
+        const value = event.target.value;
+        
+        this.setState(prevState => ({client: { ...prevState, [name] : value}}));
+
+        console.log(this.state.client);
     }
 
     handleSubmit(event){
@@ -53,7 +54,6 @@ class Form extends React.Component {
     }
 
     render() {
-        
         return (
             <form className="form" onSubmit={this.handleSubmit}>
                 <h1>Cadastre-se</h1>
