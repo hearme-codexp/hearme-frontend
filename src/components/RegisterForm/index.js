@@ -41,7 +41,7 @@ class Form extends React.Component {
     handleSubmit(event){
         event.preventDefault();
 
-        let validation = validate();
+        let validation = this.validate();
         if(validation.length == 0){
             axios.post('/user', this.state.client)
             .then(function (response) {
