@@ -4,14 +4,6 @@ import './screen.css'
 import logo from '../../tela-cadastro/logo-hearme-02.png'
 
 class Register extends React.Component {
-    // constructor(props){
-    //     super(props)
-
-    //     this.state = ({
-    //         logo: props.logo
-    //     })
-    // }
-    
     render(){
         return(
             <div>

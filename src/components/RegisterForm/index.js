@@ -77,12 +77,12 @@ class Form extends React.Component {
                 <Input type="date" placeholder="Data de nascimento" className="input" name="birth" onChange={this.handleChange}/>
                 {/* <label for="deficiency">Grau de deficiência</label> */}
                 <Input type="text" placeholder="Grau de deficiência" className="input" name="deficiency" onChange={this.handleChange}/>
-                {/* <select>
+                <select>
                     <option value="volvo">Volvo</option>
                     <option value="audi">Audi</option>
-                </select> */}
+                </select>
 
-                <Button className='button'>Cadastrar</Button>
+                <Button type="submit" className='button'>Cadastrar</Button>
             </form>
         );
     }
