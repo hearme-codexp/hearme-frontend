@@ -1,8 +1,26 @@
 input {
-    text-align: left;
+    /* text-align: left;
     padding: 0.3em;
     width: 100%;
-    font-size: 1rem;
+    font-size: 1rem; */
+
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 2px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding: 0.7rem;
+    width: 100%;
+    background-color: #e8eeef;
+    color:#8a97a0;
+    margin-bottom: 0.8rem;
+    
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
 }
 
 .input--large {

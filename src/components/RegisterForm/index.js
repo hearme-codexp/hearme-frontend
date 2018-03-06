@@ -2,55 +2,82 @@ import React from 'react'
 import Input from '../Input'
 import Button from '../Button'
 import './register.css'
-import Client from '../../Client.js';
+import Client from '../../Client'
+import axios from 'axios'
 
 class Form extends React.Component {
+    // constructor (props){
+    //     super(props);
+
+        
+    //     this.state = {
+    //         client: new Client()
+    //     }
+
+    //     this.handleSubmit = this.handleSubmit.bind(this);
+    //     this.handleChange = this.handleChange.bind(this);
+    //     this.validate = this.validate.bind(this);
+    // }
     
     state = ({
         client: new Client()
-    })
+    });
 
-    handleOnChange(event){
-        const {client} = this.state
+    validate() {
+        const errors = [];
+        const {client} = this.state;
 
-        this.setState({
-            
-        })
+        if (client.password !== client.passwordConfirmation) {
+            errors.password = 'Senhas devem ser iguais.';
+        }
 
-        console.log(new FormData(event.target))
-
+        return errors;
     }
 
-    handleSubmit(event) {
+    handleChange(event) {
+        const name = event.target.name;
+        const value = event.target.value;
+        
+        this.setState(prevState => ({client: { ...prevState, [name] : value}}));
+    }
+
+    handleSubmit(event){
         event.preventDefault();
-        console.log("submit action");   
-       
-        var data = event.target;
-        console.log(this.state);
 
-        // const test = event.target.name.value;
-
-        // axios.post('/user', { // set the correct url
-        //     name: event.target.name.value;
-        //   })
-        //   .then(function (response) {
-        //     console.log(response);
-        //   })
-        //   .catch(function (error) {
-        //     console.log(error);
-        //   });
+        let validation = this.validate();
+        if(validation.length == 0){
+            axios.post('/user', this.state.client)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
     }
 
     render() {
         return (
             <form className="form" onSubmit={this.handleSubmit}>
-                <h1>Cadastre-se</h1>
-                <Input type="text" placeholder="nome" name="name" className="input" onChange={this.handleOnChange} required/>
-                <Input type="email" placeholder="e-mail" name="email" className="input" required/>
-                <Input type="password" placeholder="senha" name="pass" className="input" required/>
-                <Input type="password" placeholder="confirme sua senha" name="passConfirmation" className="input" required/>
-                <Input type="date" placeholder="data de nascimento" name="birth" className="input" required/>
-                <Input type="text" placeholder="grau de deficiencia" name="deficiency"  className="input" required/>
+
+                <h1 className="form__title">Cadastre-se</h1>
+                {/* <label for="name">Nome</label> */}
+                <Input type="text" placeholder="Nome" name="name" className="input" onChange={this.handleChange}/>
+                {/* <label for="email">E-mail</label> */}
+                <Input type="email" placeholder="E-mail" className="input" name="email" onChange={this.handleChange}/>
+                {/* <label for="password">Senha</label> */}
+                <Input type="password" placeholder="Senha" className="input" name="password" onChange={this.handleChange}/>
+                {/* <label for="passwordConfirmation">Confirmação de senha</label> */}
+                <Input type="password" placeholder="Confirmação de senha" className="input" name="passwordConfirmation" onChange={this.handleChange}/>
+                {/* <label for="birth">Data de nascimento</label> */}
+                <Input type="date" placeholder="Data de nascimento" className="input" name="birth" onChange={this.handleChange}/>
+                {/* <label for="deficiency">Grau de deficiência</label> */}
+                <Input type="text" placeholder="Grau de deficiência" className="input" name="deficiency" onChange={this.handleChange}/>
+                {/* <select>
+                    <option value="volvo">Volvo</option>
+                    <option value="audi">Audi</option>
+                </select> */}
+
                 <Button className='button'>Cadastrar</Button>
             </form>
         );

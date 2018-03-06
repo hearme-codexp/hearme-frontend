@@ -1,66 +1,58 @@
-export default class Client{
-
-    constructor()
-    {
-        this._name = "";
-        this._email = "";
-        this._password = "";
-        this._passConfirmation = "";
-        this._birth = null;
-        this._deficiency = "";
+export default class Client {
+    constructor() {
+        this._name = '';
+        this._email = '';
+        this._password = '';
+        this._passwordConfirmation = '';
+        this._birth = '';
+        this._deficiency = '';
     }
 
-    get name()
-    {
+    get name() {
         return this._name;
     }
 
-    set name(name){
+    set name(name) {
         this._name = name;
     }
 
-    get email()
-    {
+    get email() {
         return this._email;
     }
 
-    set email(email){
+    set email(email) {
         this._email = email;
     }
 
-    get password()
-    {
+    get password() {
         return this._password;
     }
 
-    set password(password){
+    set password(password) {
         this._password = password;
     }
-    
-    get passConfirmation()
-    {
-        return this._passConfirmation;
+
+    get passwordConfirmation() {
+        return this._passwordConfirmation;
     }
 
-    set passConfirmation(passConfirmation){
-        this._passConfirmation = passConfirmation;
+    set passwordConfirmation(passwordConfirmation) {
+        this._passwordConfirmation = passwordConfirmation;
     }
-    
-    get birth()
-    {
+
+    get birth() {
         return this._birth;
     }
 
-    set birth(birth){
+    set birth(birth) {
         this._birth = birth;
     }
 
-    get deficiency()
-    {
+    get deficiency() {
         return this._deficiency;
     }
 
-    set deficiency(deficiency){
+    set deficiency(deficiency) {
         this._deficiency = deficiency;
     }
 }
