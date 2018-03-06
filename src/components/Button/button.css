@@ -1,13 +1,13 @@
 .button {
     padding: 1rem 3rem;
-    width: 10%;
-    font-family: 'Robot Condensed', sans-serif;
-    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;    
+    background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0);
     border: none;
-    font-size: 1.5rem;
+    font-size: 18px;
     font-weight: 500;
-    background: linear-gradient(to bottom right, #007AF3,#007AF3, #00DFF0);
     color: #fff;
+    margin: 1rem 0;
+    text-align: center;
 }
 
 .button--large {

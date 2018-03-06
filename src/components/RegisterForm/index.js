@@ -34,8 +34,6 @@ class Form extends React.Component {
         const value = event.target.value;
         
         this.setState(prevState => ({client: { ...prevState, [name] : value}}));
-
-        console.log(this.state.client);
     }
 
     handleSubmit(event){
@@ -56,13 +54,24 @@ class Form extends React.Component {
     render() {
         return (
             <form className="form" onSubmit={this.handleSubmit}>
-                <h1>Cadastre-se</h1>
+                <h1 className="form__title">Cadastre-se</h1>
+                {/* <label for="name">Nome</label> */}
                 <Input type="text" placeholder="Nome" name="name" className="input" onChange={this.handleChange}/>
-                <Input type="email" placeholder="e-mail" className="input" name="email" onChange={this.handleChange}/>
-                <Input type="password" placeholder="senha" className="input" name="password" onChange={this.handleChange}/>
-                <Input type="password" placeholder="confirme sua senha" className="input" name="passwordConfirmation" onChange={this.handleChange}/>
-                <Input type="date" placeholder="data de nascimento" className="input" name="birth" onChange={this.handleChange}/>
-                <Input type="text" placeholder="grau de deficiencia" className="input" name="deficiency" onChange={this.handleChange}/>
+                {/* <label for="email">E-mail</label> */}
+                <Input type="email" placeholder="E-mail" className="input" name="email" onChange={this.handleChange}/>
+                {/* <label for="password">Senha</label> */}
+                <Input type="password" placeholder="Senha" className="input" name="password" onChange={this.handleChange}/>
+                {/* <label for="passwordConfirmation">Confirmação de senha</label> */}
+                <Input type="password" placeholder="Confirmação de senha" className="input" name="passwordConfirmation" onChange={this.handleChange}/>
+                {/* <label for="birth">Data de nascimento</label> */}
+                <Input type="date" placeholder="Data de nascimento" className="input" name="birth" onChange={this.handleChange}/>
+                {/* <label for="deficiency">Grau de deficiência</label> */}
+                <Input type="text" placeholder="Grau de deficiência" className="input" name="deficiency" onChange={this.handleChange}/>
+                {/* <select>
+                    <option value="volvo">Volvo</option>
+                    <option value="audi">Audi</option>
+                </select> */}
+
                 <Button className='button'>Cadastrar</Button>
             </form>
         );
