@@ -1,4 +1,4 @@
-class Client {
+export default class Client {
     constructor() {
         this._name = '';
         this._email = '';
