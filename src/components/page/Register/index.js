@@ -1,7 +1,7 @@
 import React from 'react'
-import RegisterForm from '../RegisterForm'
+import RegisterForm from '../../RegisterForm'
 import './screen.css'
-import logo from '../../tela-cadastro/logo-hearme-02.png'
+import logo from './logo-hearme-02.png'
 
 class Register extends React.Component {
     render(){
