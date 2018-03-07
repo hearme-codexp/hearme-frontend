@@ -9,7 +9,6 @@ class Form extends React.Component {
     constructor (props){
         super(props);
 
-        
         this.state = {
             client: new Client()
         }
@@ -40,8 +39,6 @@ class Form extends React.Component {
         
         this.state.client[name] = value;
         this.setState({client:  this.state.client});
-        // this.setState(prevState => ({client: ...prevState, [name]:value }))
-        // this.setState(prevState => ({client: { [name] : value}}));
     }
 
     handleSubmit(event){
@@ -50,7 +47,7 @@ class Form extends React.Component {
 
         let validation = this.validate();
         if(validation.length == 0){
-            axios.post('/user', this.state.client)
+            axios.post('', this.state.client)
             .then(function (response) {
                 console.log(response);
             })
@@ -77,11 +74,15 @@ class Form extends React.Component {
                 <Input type="date" placeholder="Data de nascimento" className="input" name="birth" onChange={this.handleChange}/>
                 {/* <label for="deficiency">Grau de deficiência</label> */}
                 <Input type="text" placeholder="Grau de deficiência" className="input" name="deficiency" onChange={this.handleChange}/>
-                <select>
+                <select className="input">
                     <option value="volvo">Volvo</option>
                     <option value="audi">Audi</option>
                 </select>
-
+                <div>
+                    <Input type="radio" className="input" name="gender" value ="male" onChange={this.handleChange}/>
+                    <Input type="radio" className="input" name="gender" value ="female" onChange={this.handleChange}/>
+                    <Input type="radio" className="input" name="gender" value ="other" onChange={this.handleChange}/>
+                </div>
                 <Button type="submit" className='button'>Cadastrar</Button>
             </form>
         );

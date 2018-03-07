@@ -1,4 +1,4 @@
-input {
+.input {
     /* text-align: left;
     padding: 0.3em;
     width: 100%;
@@ -23,6 +23,9 @@ input {
     -moz-box-sizing: border-box; 
 }
 
+.test {
+    background-color: green;
+}
 .input--large {
     width: 50%;
 }
