@@ -4,13 +4,15 @@ import Button from '../Button'
 import './register.css'
 import Client from '../../Client'
 import axios from 'axios'
-import { Title } from 'glamorous';
+// import { Title } from 'glamorous';
+// import { DatePicker } from 'antd';
+// import 'antd/dist/antd.css';
 
 class Form extends React.Component {
     state = {
-        client: new Client()
     }
-
+    client = {};
+    
     validate() {
         const errors = [];
         const {client} = this.state;
@@ -30,31 +32,56 @@ class Form extends React.Component {
         this.setState({client:  this.state.client});
     }
 
+    onChange = (date, dateString) => {
+        console.log(date, dateString);
+      }
+      
+    handleOptions = (options) => {
+        console.log(options)
+        let result = options.map((item) => <option value={item}>{item}</option>);
+
+        console.log(result);
+        return result;
+    }
+
     handleSubmit = (event) => {
         event.preventDefault();
 
-        const data = {
-            name: this.client.name.value,
-            // email: this.client.email.value,
-        };
+        try {
+            const data = {
+                name: this.client.name.value,
+                email: this.client.email.value,
+                password: this.client.password.value,
+                passwordConfirmation: this.client.password.value,
+                deficiency: this.client.deficiency.value,
+                gender: this.client.gender.value
+            };
+            
+            console.log(data);
 
-        let validation = this.validate();
-        if(validation.length == 0){
-            axios.post('', this.state.client)
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+            let validation = this.validate();
+            
+            if(validation.length == 0){
+                axios.post('', this.state.client)
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            }
+        }
+        catch( ex)
+        {
+            console.log(ex);
         }
     }
-
-    client = {};
 
     render() {
         return (
             <React.Fragment>
+
+                {/* <DatePicker onChange={this.onChange} /> */}
                 <form className="form" onSubmit={this.handleSubmit}>
                     <h1 className="form__title">Cadastre-se</h1>
                     {/* <label for="name">Nome</label> */}
@@ -66,17 +93,26 @@ class Form extends React.Component {
                     {/* <label for="passwordConfirmation">Confirmação de senha</label> */}
                     <Input type="password" placeholder="Confirmação de senha" className="input" name="passwordConfirmation" innerRef={elem => this.client.passwordConfirmation = elem}/>
                     {/* <label for="birth">Data de nascimento</label> */}
+                
                     <Input type="date" placeholder="Data de nascimento" className="input" name="birth" innerRef={elem => this.client.birth = elem}/>
                     {/* <label for="deficiency">Grau de deficiência</label> */}
-                    <Input type="text" placeholder="Grau de deficiência" className="input" name="deficiency" innerRef={elem => this.client.deficiency = elem}/>
+                    {/* <Input type="text" placeholder="Grau de deficiência" className="input" name="deficiency" innerRef={elem => this.client.deficiency = elem}/> */}
                     <select className="input">
-                        <option value="volvo">Volvo</option>
-                        <option value="audi">Audi</option>
+                        {this.handleOptions(this.props.options)}
                     </select>
-                    <div>
-                        <Input type="radio" name="gender" value ="male" innerRef={elem => this.client.name = elem} />
-                        <Input type="radio" name="gender" value ="female" innerRef={elem => this.client.name = elem}/>
-                        <Input type="radio" name="gender" value ="other" innerRef={elem => this.client.name = elem}/>
+                    <div className= "form-radios">
+                        <div className="form-radios__genders">
+                            <Input id="radio-male" type="radio" name="gender" value ="male" innerRef={elem => this.client.gender = elem} /> 
+                            <label for="radio-male">Masculino</label>
+                        </div>  
+                        <div className="form-radios__genders">
+                            <Input id="radio-female" className="form-radios__genders" type="radio" name="gender" value ="female" innerRef={elem => this.client.gender = elem}/> 
+                            <label for="radio-female">Feminino</label> 
+                        </div> 
+                        <div className="form-radios__genders">
+                            <Input id="radio-other" type="radio" name="gender" value ="other" innerRef={elem => this.client.gender = elem}/> 
+                            <label for="radio-other">Outro</label> 
+                        </div>
                     </div>
                     <Button type="submit" className='button'>Cadastrar</Button>
                 </form>

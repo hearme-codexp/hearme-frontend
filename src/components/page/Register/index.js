@@ -7,11 +7,11 @@ class Register extends React.Component {
     render(){
         return(
             <div>
-                <header class="header">
+                <header className="header">
                     <img src={logo} alt="logo" width="150" /> 
                 </header>
                 <div className="section">
-                    <RegisterForm />
+                    <RegisterForm options={['Leve', 'Moderada', 'Alta', 'Surdez']}/>
                 </div>
             </div>
         );

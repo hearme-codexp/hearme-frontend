@@ -4,5 +4,13 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { LocaleProvider } from 'antd';
+import pt_BR from 'antd/lib/locale-provider/pt_BR';
+import 'moment/locale/pt';
+
+ReactDOM.render(
+    <LocaleProvider locale={pt_BR}>
+        <App />
+    </LocaleProvider>
+    , document.getElementById('root'));
 registerServiceWorker();
