@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 import Register from './components/page/Register'
+import Login from './components/login'
 
 class App extends Component {
   render() {
     return (
-      // <header className="header">
-      //     <img src={logo} width="150"/><
-      // </header>
-      <Register className='form' />
+      <Register />
       // <div className="App">
       //   <header className="App-header">
       //     <img src={logo} className="App-logo" alt="logo" />

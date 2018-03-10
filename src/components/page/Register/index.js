@@ -1,5 +1,6 @@
 import React from 'react'
 import RegisterForm from '../../RegisterForm'
+import Login from '../../login'
 import './screen.css'
 import logo from './logo-hearme-02.png'
 
@@ -11,7 +12,8 @@ class Register extends React.Component {
                     <img src={logo} alt="logo" width="150" /> 
                 </header>
                 <div className="section">
-                    <RegisterForm options={['Leve', 'Moderada', 'Alta', 'Surdez']}/>
+                    {/* <Login />    */}
+                    <RegisterForm options={["Leve", "Alta"]}/>
                 </div>
             </div>
         );

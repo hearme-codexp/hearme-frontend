@@ -1,124 +1,179 @@
 import React from 'react'
-import Input from '../Input'
-import Button from '../Button'
-import './register.css'
-import Client from '../../Client'
-import axios from 'axios'
-// import { Title } from 'glamorous';
-// import { DatePicker } from 'antd';
-// import 'antd/dist/antd.css';
+import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
+import { DatePicker } from 'antd';
 
-class Form extends React.Component {
-    state = {
-    }
-    client = {};
-    
-    validate() {
-        const errors = [];
-        const {client} = this.state;
+const FormItem = Form.Item;
+const Option = Select.Option;
 
-        if (client.password !== client.passwordConfirmation) {
-            errors.password = 'Senhas devem ser iguais.';
-        }
-
-        return errors;
-    }
-
-    handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        
-        this.state.client[name] = value;
-        this.setState({client:  this.state.client});
-    }
-
-    onChange = (date, dateString) => {
-        console.log(date, dateString);
+class RegistrationForm extends React.Component {
+  state = {
+    confirmDirty: false,
+  };
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.form.validateFieldsAndScroll((err, values) => {
+      if (!err) {
+        console.log('Received values of form: ', values);
       }
-      
-    handleOptions = (options) => {
-        console.log(options)
-        let result = options.map((item) => <option value={item}>{item}</option>);
-
-        console.log(result);
-        return result;
+    });
+  }
+  handleConfirmBlur = (e) => {
+    const value = e.target.value;
+    this.setState({ confirmDirty: this.state.confirmDirty || !!value });
+  }
+  compareToFirstPassword = (rule, value, callback) => {
+    const form = this.props.form;
+    if (value && value !== form.getFieldValue('password')) {
+      callback('Two passwords that you enter is inconsistent!');
+    } else {
+      callback();
     }
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-
-        try {
-            const data = {
-                name: this.client.name.value,
-                email: this.client.email.value,
-                password: this.client.password.value,
-                passwordConfirmation: this.client.password.value,
-                deficiency: this.client.deficiency.value,
-                gender: this.client.gender.value
-            };
-            
-            console.log(data);
-
-            let validation = this.validate();
-            
-            if(validation.length == 0){
-                axios.post('', this.state.client)
-                .then(function (response) {
-                    console.log(response);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-            }
-        }
-        catch( ex)
-        {
-            console.log(ex);
-        }
+  }
+  validateToNextPassword = (rule, value, callback) => {
+    const form = this.props.form;
+    if (value && this.state.confirmDirty) {
+      form.validateFields(['confirm'], { force: true });
     }
+    callback();
+  }
 
-    render() {
-        return (
-            <React.Fragment>
+  render() {
+    const { getFieldDecorator } = this.props.form;
 
-                {/* <DatePicker onChange={this.onChange} /> */}
-                <form className="form" onSubmit={this.handleSubmit}>
-                    <h1 className="form__title">Cadastre-se</h1>
-                    {/* <label for="name">Nome</label> */}
-                    <Input type="text" placeholder="Nome" name="name" className="input" innerRef={elem => this.client.name = elem}/>
-                    {/* <label for="email">E-mail</label> */}
-                    <Input type="email" placeholder="E-mail" className="input" name="email" innerRef={elem => this.client.email = elem}/>
-                    {/* <label for="password">Senha</label> */}
-                    <Input type="password" placeholder="Senha" className="input" name="password" innerRef={elem => this.client.password = elem}/>
-                    {/* <label for="passwordConfirmation">Confirmação de senha</label> */}
-                    <Input type="password" placeholder="Confirmação de senha" className="input" name="passwordConfirmation" innerRef={elem => this.client.passwordConfirmation = elem}/>
-                    {/* <label for="birth">Data de nascimento</label> */}
-                
-                    <Input type="date" placeholder="Data de nascimento" className="input" name="birth" innerRef={elem => this.client.birth = elem}/>
-                    {/* <label for="deficiency">Grau de deficiência</label> */}
-                    {/* <Input type="text" placeholder="Grau de deficiência" className="input" name="deficiency" innerRef={elem => this.client.deficiency = elem}/> */}
-                    <select className="input">
-                        {this.handleOptions(this.props.options)}
-                    </select>
-                    <div className= "form-radios">
-                        <div className="form-radios__genders">
-                            <Input id="radio-male" type="radio" name="gender" value ="male" innerRef={elem => this.client.gender = elem} /> 
-                            <label for="radio-male">Masculino</label>
-                        </div>  
-                        <div className="form-radios__genders">
-                            <Input id="radio-female" className="form-radios__genders" type="radio" name="gender" value ="female" innerRef={elem => this.client.gender = elem}/> 
-                            <label for="radio-female">Feminino</label> 
-                        </div> 
-                        <div className="form-radios__genders">
-                            <Input id="radio-other" type="radio" name="gender" value ="other" innerRef={elem => this.client.gender = elem}/> 
-                            <label for="radio-other">Outro</label> 
-                        </div>
-                    </div>
-                    <Button type="submit" className='button'>Cadastrar</Button>
-                </form>
-            </React.Fragment>
-        );
-    }
+    const formItemLayout = {
+      labelCol: {
+        xs: { span: 24 },
+        sm: { span: 8 },
+      },
+      wrapperCol: {
+        xs: { span: 24 },
+        sm: { span: 16 },
+      },
+    };
+    const tailFormItemLayout = {
+      wrapperCol: {
+        xs: {
+          span: 24,
+          offset: 0,
+        },
+        sm: {
+          span: 16,
+          offset: 8,
+        },
+      },
+    };
+
+    return (
+      <Form onSubmit={this.handleSubmit}>
+        <FormItem
+          {...formItemLayout}
+          label={(
+            <span>
+              Name&nbsp;
+              <Tooltip title="What do you want others to call you?">
+                <Icon type="question-circle-o" />
+              </Tooltip>
+            </span>
+          )}
+        >
+          {getFieldDecorator('nickname', {
+            rules: [{ required: true, message: 'Please input your name!', whitespace: true }],
+          })(
+            <Input />
+          )}
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="E-mail"
+        >
+          {getFieldDecorator('email', {
+            rules: [{
+              type: 'email', message: 'The input is not valid E-mail!',
+            }, {
+              required: true, message: 'Please input your E-mail!',
+            }],
+          })(
+            <Input />
+          )}
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="Password"
+        >
+          {getFieldDecorator('password', {
+            rules: [{
+              required: true, message: 'Please input your password!',
+            }, {
+              validator: this.validateToNextPassword,
+            }],
+          })(
+            <Input type="password" />
+          )}
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="Confirm Password"
+        >
+          {getFieldDecorator('confirm', {
+            rules: [{
+              required: true, message: 'Please confirm your password!',
+            }, {
+              validator: this.compareToFirstPassword,
+            }],
+          })(
+            <Input type="password" onBlur={this.handleConfirmBlur} />
+          )}
+        </FormItem>
+        <FormItem
+        {...formItemLayout}
+        label="Date of birth"
+        >
+            <DatePicker/>
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="Deficiency"
+        >
+          {getFieldDecorator('deficiency', {
+            rules: [{ required: true, message: 'Please select your deficiency!' }],
+          })(
+            <Select style={{ width: '30%' }} defaultValue="Deficiency">
+                <Option value="Low">Low</Option>
+                <Option value="Medium">Medium</Option>
+                <Option value="High">High</Option>
+                <Option value="Deafness">Deafness</Option>
+            </Select>
+          )}
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="Genre"
+        >
+          {getFieldDecorator('genre', {
+            rules: [{ required: true, message: 'Please select your genre!' }],
+          })(
+            <Select style={{ width: '30%' }} defaultValue="Genre">
+                <Option value="Female">Female</Option>
+                <Option value="Male">Male</Option>
+                <Option value="Other">Other</Option>
+            </Select>
+          )}
+        </FormItem>
+        <FormItem {...tailFormItemLayout}>
+          {getFieldDecorator('agreement', {
+            valuePropName: 'checked',
+          })(
+            <Checkbox>I have read the <a href="">agreement</a></Checkbox>
+          )}
+        </FormItem>
+        <FormItem {...tailFormItemLayout}>
+          <Button type="primary" htmlType="submit">Register</Button>
+        </FormItem>
+      </Form>
+    );
+  }
 }
 
-export default Form;
+const WrappedRegistrationForm = Form.create()(RegistrationForm);
+
+export default WrappedRegistrationForm;
