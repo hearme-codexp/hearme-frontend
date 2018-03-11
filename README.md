@@ -5,9 +5,9 @@ Front end project for hear.me app
 ## TO RUN
 
 ```
-yarn 
-yarn start
+> yarn 
+> yarn start
 
-npm install
-npm start
+> npm install
+> npm start
 ```
