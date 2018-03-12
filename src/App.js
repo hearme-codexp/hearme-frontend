@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Register from './components/page/Register'
 import Login from './components/login'
+import logo from './logo-hearme-02.png'
 
 class App extends Component {
   render() {
     return (
-      <Register />
-      // <div className="App">
-      //   <header className="App-header">
-      //     <img src={logo} className="App-logo" alt="logo" />
-      //     <h1 className="App-title">Welcome to React</h1>
-      //   </header>
-      //   <p className="App-intro">
-      //     To get started, edit <code>src/App.js</code> and save to reload.
-      //   </p>
-      // </div>
+      <React.Fragment>
+        <header className="header">
+          <img src={logo} alt="logo" width="150" /> 
+        </header>
+        <div className="section">
+            <Register />
+            {/* <Login /> */}
+        </div>
+      </React.Fragment>
     );
   }
 }

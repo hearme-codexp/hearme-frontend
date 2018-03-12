@@ -42,9 +42,9 @@
     justify-content: space-around;
 }
 
-.input-login {
-    font-size: px;
-}
+/* .input-login {
+    font-size: 2px;
+} */
 
 .button {
     display: flex;

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
 import { DatePicker } from 'antd';
+import axios from 'axios'
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -13,7 +14,14 @@ class RegistrationForm extends React.Component {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        // console.log('Received values of form: ', values);
+        axios.post('', values)
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
       }
     });
   }
@@ -24,7 +32,7 @@ class RegistrationForm extends React.Component {
   compareToFirstPassword = (rule, value, callback) => {
     const form = this.props.form;
     if (value && value !== form.getFieldValue('password')) {
-      callback('Two passwords that you enter is inconsistent!');
+    //   callback('Two passwords that you enter is inconsistent!');
     } else {
       callback();
     }
@@ -137,7 +145,7 @@ class RegistrationForm extends React.Component {
           {getFieldDecorator('deficiency', {
             rules: [{ required: true, message: 'Please select your deficiency!' }],
           })(
-            <Select style={{ width: '30%' }} defaultValue="Deficiency">
+            <Select style={{ width: '30%' }}>
                 <Option value="Low">Low</Option>
                 <Option value="Medium">Medium</Option>
                 <Option value="High">High</Option>
@@ -152,7 +160,7 @@ class RegistrationForm extends React.Component {
           {getFieldDecorator('genre', {
             rules: [{ required: true, message: 'Please select your genre!' }],
           })(
-            <Select style={{ width: '30%' }} defaultValue="Genre">
+            <Select style={{ width: '30%' }}>
                 <Option value="Female">Female</Option>
                 <Option value="Male">Male</Option>
                 <Option value="Other">Other</Option>
