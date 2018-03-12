@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -20,9 +20,23 @@
 
 .App-intro {
   font-size: large;
+} */
+
+.section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
+
+.header {
+  width: 100%;
+  background-image: linear-gradient(to bottom right, #18002A, #18002A, #3F0027);
+  padding: 0.6rem 0;
+  text-align: center;   
+}  
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+

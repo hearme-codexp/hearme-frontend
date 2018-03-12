@@ -1,0 +1,14 @@
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.button__create {
+    padding: 1rem 3rem;
+    font-family: 'Roboto Condensed', sans-serif;    
+    background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0);
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
