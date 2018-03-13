@@ -4,15 +4,9 @@
     box-sizing: border-box;
 }
 
-.form {
-    padding: 2rem 0 0 0;
-    margin: 0 3rem;
-    color: rgb(75, 73, 73);
-    font-family: 'Open Sans Condensed', sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-    height: 500px;
-    justify-content: space-around;
+.form--register {
+    padding: 3rem 0 0 0;
+    width: 80%;
 }
 
 .form-radios {
@@ -40,20 +34,44 @@
     padding-bottom: 1.5rem;
 }
 
+.button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 2.3rem;
+}
+
+.button__create {
+    font-family: 'Roboto Condensed', sans-serif;
+    background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0);
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 0;
+    margin: 0;
+}
+
 @media (min-width: 768px) {
-    .form {
-        width: 40%;
+
+    .form--register {
+        padding: 3.5rem 0 0 0;
+        width: 60%;
     }
+
 }
 
 @media (min-width: 992px) {
-    .form {
-        width: 30%;
+
+    .form--register {
+        padding: 4rem 0 0 0;
+        width: 50%;
     }
 }
 
 @media (min-width: 1200px) {
-    .form {
-        width: 20%;
+
+    .form--register {
+        padding: 4rem 0 0 0;
+        width: 40%;
     }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
 import { DatePicker } from 'antd';
 import axios from 'axios'
+import './register.css'
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -72,7 +73,7 @@ class RegistrationForm extends React.Component {
     };
 
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit} className="form--register">
         <FormItem
           {...formItemLayout}
           label={(
@@ -175,7 +176,7 @@ class RegistrationForm extends React.Component {
           )}
         </FormItem>
         <FormItem {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">Register</Button>
+          <Button type="primary" htmlType="submit" className="button button__create">Register</Button>
         </FormItem>
       </Form>
     );
