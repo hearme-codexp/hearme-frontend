@@ -1,10 +1,15 @@
 import React from 'react'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+// import style from './maps.css'
+import demoFancyMapStyles from "./demoFancyMapStyles.json"
+import {GoogleMap} from 'react-google-maps';
 
 const style = {
-    width: '100%',
-    height: '50%'
-  }
+    width: '50%',
+    height: '50%',
+    'margin-top': '20px',
+    'margin-right': '0'
+}
 
 export class MapContainer extends React.Component {
 state = {
@@ -12,10 +17,13 @@ state = {
 }
 
 render() {
+
     return (
-      <Map google={this.props.google} 
+      <Map google={this.props.google}
         style={style}
-        zoom={14}>
+        styles= {demoFancyMapStyles}
+        defaultZoom={8}
+        defaultCenter={{ lat: -34.397, lng: 150.644 }}>
 
         <Marker onClick={this.onMarkerClick}
                 name={'Current location'} />
