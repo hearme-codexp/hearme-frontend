@@ -1,14 +1,17 @@
 import React from 'react'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-// import style from './maps.css'
+import './maps.css'
 import demoFancyMapStyles from "./demoFancyMapStyles.json"
-import {GoogleMap} from 'react-google-maps';
+import GoogleMapReact from 'google-map-react';
 
 const style = {
     width: '50%',
     height: '50%',
-    'margin-top': '20px',
-    'margin-right': '0'
+    // 'margin-top': '20px',
+    // 'margin-right': '0'
+    display: 'inline-block',
+    position: 'unset',
+    'box-sizing': 'border-box'
 }
 
 export class MapContainer extends React.Component {
@@ -17,14 +20,14 @@ state = {
 }
 
 render() {
-
     return (
-      <Map google={this.props.google}
+      <Map
+        containerStyle={{ display:'flex', width: '50%', position: 'unset', 'box-sizing': 'border-box'}}
+        google={this.props.google}
         style={style}
         styles= {demoFancyMapStyles}
         defaultZoom={8}
-        defaultCenter={{ lat: -34.397, lng: 150.644 }}>
-
+        defaultCenter={{ lat: -23.5612844, lng: -46.6965538 }}>
         <Marker onClick={this.onMarkerClick}
                 name={'Current location'} />
 
@@ -39,5 +42,5 @@ render() {
 }
 
 export default GoogleApiWrapper({
-  apiKey: ("AIzaSyBkztZV6Py0-LpJVYmSJ3gT_DmMWq0M6Iw")
+  apiKey: ("AIzaSyBkztZV6Py0-LpJVYmSJ3gT_DmMWq0M6Iw"),
 })(MapContainer)

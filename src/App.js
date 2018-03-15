@@ -15,7 +15,7 @@ class App extends Component {
         <div className="section">
             {/* <Register /> */}
             {/* <Login /> */}
-            <Map />
+            <Map className="test"/>
         </div>
       </React.Fragment>
     );
