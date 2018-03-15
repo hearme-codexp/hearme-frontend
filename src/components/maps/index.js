@@ -5,11 +5,11 @@ import demoFancyMapStyles from "./demoFancyMapStyles.json"
 import GoogleMapReact from 'google-map-react';
 
 const style = {
-    width: '50%',
-    height: '50%',
+    width: '100%',
+    height: '100%',
     // 'margin-top': '20px',
     // 'margin-right': '0'
-    display: 'inline-block',
+    // display: 'inline-block', 
     position: 'unset',
     'box-sizing': 'border-box'
 }
@@ -22,7 +22,7 @@ state = {
 render() {
     return (
       <Map
-        containerStyle={{ display:'flex', width: '50%', position: 'unset', 'box-sizing': 'border-box'}}
+        containerStyle={{ width: '50%', height: '100%', 'box-sizing': 'border-box'}}
         google={this.props.google}
         style={style}
         styles= {demoFancyMapStyles}

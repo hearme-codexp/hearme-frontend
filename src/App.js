@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo-hearme-02.png'
 import './App.css';
-import Register from './components/page/Register'
-import Login from './components/login'
+// import Register from './components/page/Register'
+// import Login from './components/login'
 import Map from './components/maps'
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
         <div className="section">
             {/* <Register /> */}
             {/* <Login /> */}
-            <Map className="test"/>
+            <Map />
         </div>
       </React.Fragment>
     );
