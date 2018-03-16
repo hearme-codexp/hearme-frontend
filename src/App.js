@@ -3,7 +3,8 @@ import logo from './logo-hearme-02.png'
 import './App.css';
 // import Register from './components/page/Register'
 // import Login from './components/login'
-import Map from './components/maps'
+// import Map from './components/maps'
+import Home from './components/page/home'
 
 class App extends Component {
   render() {
@@ -15,7 +16,7 @@ class App extends Component {
         <div className="section">
             {/* <Register /> */}
             {/* <Login /> */}
-            <Map />
+            <Home />
         </div>
       </React.Fragment>
     );
