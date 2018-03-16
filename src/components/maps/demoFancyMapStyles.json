@@ -66,7 +66,7 @@
     "featureType": "road.highway",
     "elementType": "geometry.stroke",
     "stylers": [{
-        "color": "#471335"
+        "color": "#261635"
       },
       {
         "lightness": 25
