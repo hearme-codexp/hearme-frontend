@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo-hearme-02.png'
+import logo from './img/logo-hearme-02.png'
 import './App.css';
 // import Register from './components/page/Register'
 // import Login from './components/login'
