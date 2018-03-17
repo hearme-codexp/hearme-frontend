@@ -3,22 +3,18 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import './App.css';
 import RegisterForm from './components/RegisterForm'
 import Login from './components/login'
-import logo from './logo-hearme-02.png'
+import LandingPage from './components/page/LandingPage'
 
 class App extends Component {
   render() {
     return (
       <Router>
         <React.Fragment>
-          <header className="header">
-            <img src={logo} alt="logo" width="150" className="logo" />
-          </header>
-          <div className="section">
+            <LandingPage/>            
             {/*<RegisterForm options={["Leve", "Alta"]}/>*/}
             {/* <Login />  */}
             <Route exact path="/login" component={Login} />
             <Route path="/cadastro" component={RegisterForm} />
-          </div>
         </React.Fragment>
       </Router>
     );
