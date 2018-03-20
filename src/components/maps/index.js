@@ -33,6 +33,15 @@ onMarkerClustererClick = (markerClusterer)  => {
   console.log(clickedMarkers)
 }
 
+setInitialMarker = (markers) => {
+    console.log(markers)
+    if(markers != null && markers.length > 0) {
+      return  { lat: markers[1].latitude, lng: markers[1].longitude }
+    }
+    // else 
+    //   return {lat: -23.5612844, lng: -46.6955538 }
+}
+
 render() {
     return (
       <Map
@@ -40,8 +49,10 @@ render() {
         google={this.props.google}
         style={style}
         styles= {demoFancyMapStyles}
-        defaultZoom={8}
-        initialCenter={{ lat: -23.5612844, lng: -46.6965538 }}>
+        // fitBounds = {place.geometry.viewport}
+        defaultZoom={false}
+        initialCenter = {this.setInitialMarker(this.props.markers)}
+      >
         {/* <Marker onClick={this.onMarkerClick}
                 name={'Current location'} /> */}
 
@@ -51,8 +62,9 @@ render() {
           enableRetinaIcons
           gridSize={60}
         > */}
-          {this.props.markers.map(marker => (
+          {this.props.markers.map((marker, i) => (
             <Marker
+              key={i}
               onClick={this.onMarkerClick}
               position={{ lat: marker.latitude, lng: marker.longitude }}
               name={'Current location'}
