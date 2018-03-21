@@ -1,9 +1,8 @@
 import React from 'react'
 import { AxisBottom, AxisLeft } from '@vx/axis';
 import {Line} from "react-chartjs";
-// or
-// import * as Axis from '@vx/axis';
-// <Axis.AxisBottom />
+import './graph.css';
+
 const chartData = {
 	labels: ["January", "February", "March", "April", "May", "June", "July"],
 	datasets: [
@@ -86,25 +85,7 @@ const chartOptions = {
 class Graphic extends React.Component  {
   render(){
     return (
-      <Line data={chartData} options={chartOptions}/>
-      // <React.Fragment>
-      //     <AxisBottom
-      //       scale={this.props.xScale}
-      //       top={10 + this.props.margin.top}
-      //       left={this.props.margin.left}
-      //       label={'My string label'}
-      //       stroke={'#1b1a1e'}
-      //       tickTextFill={'#1b1a1e'}
-      //     />
-      //     <AxisLeft
-      //       scale={this.props.yScale}
-      //       top={this.props.margin.top}    
-      //       left={this.props.margin.left}
-      //       label={<text>My component label</text>}
-      //       stroke={'#1b1a1e'}
-      //       tickTextFill={'#1b1a1e'}
-      //     />
-      // </React.Fragment>
+      <Line data={chartData} width="500" options={chartOptions}/>
     );
   }
 }
