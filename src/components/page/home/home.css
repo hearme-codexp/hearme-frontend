@@ -1,0 +1,14 @@
+.load {
+    margin: 0 auto;
+    padding-top: 10rem;
+}
+
+.home {
+    display: flex;
+    justify-content: space-around;
+    align-content: space-between;
+}
+
+.test{
+    display: flex;
+}

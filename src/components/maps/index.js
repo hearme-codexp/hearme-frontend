@@ -1,86 +1,80 @@
 import React from 'react'
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-import './maps.css'
-import demoFancyMapStyles from "./demoFancyMapStyles.json"
-import GoogleMapReact from 'google-map-react';
-import MarkerClusterer from 'react-google-maps/lib/components/addons/MarkerClusterer';
+const { compose, withProps, withStateHandlers } = require("recompose");
+const {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker
+} = require("react-google-maps");
+const { InfoBox } = require("react-google-maps/lib/components/addons/InfoBox");
+const demoFancyMapStyles = require("./demoFancyMapStyles.json");
 
-const style = {
-    width: '100%',
-    height: '100%',
-    // 'margin-top': '20px',
-    // 'margin-right': '0'
-    // display: 'inline-block', 
-    position: 'unset',
-    'box-sizing': 'border-box'
-}
 
-export class MapContainer extends React.Component {
-state = {
-    selectedPlace : "test",
 
-    // markers:[
-    //           {latitude: -23.5612844, longitude: -46.6955538},
-    //           {latitude: -23.5612844, longitude: -46.6944638},
-    //           {latitude: -23.5612844, longitude: -46.6933738},
-    //           { latitude: -23.5612844, longitude: -46.6965538 },
-    //         ]
-}
-
-onMarkerClustererClick = (markerClusterer)  => {
-  const clickedMarkers = markerClusterer.getMarkers()
-  console.log(`Current clicked markers length: ${clickedMarkers.length}`)
-  console.log(clickedMarkers)
-}
-
-setInitialMarker = (markers) => {
-    console.log(markers)
-    if(markers != null && markers.length > 0) {
-      return  { lat: markers[1].latitude, lng: markers[1].longitude }
-    }
-    // else 
-    //   return {lat: -23.5612844, lng: -46.6955538 }
-}
-
-render() {
-    return (
-      <Map
-        containerStyle={{ width: '50%', height: '100%', 'box-sizing': 'border-box'}}
-        google={this.props.google}
-        style={style}
-        styles= {demoFancyMapStyles}
-        // fitBounds = {place.geometry.viewport}
-        defaultZoom={false}
-        initialCenter = {this.setInitialMarker(this.props.markers)}
-      >
-        {/* <Marker onClick={this.onMarkerClick}
-                name={'Current location'} /> */}
-
-        {/* <MarkerClusterer
-          onClick={this.props.onMarkerClustererClick}
-          averageCenter
-          enableRetinaIcons
-          gridSize={60}
-        > */}
-          {this.props.markers.map((marker, i) => (
+const StyledMapWithAnInfoBox = compose(
+  withProps({
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",
+    loadingElement: <div style={{ height: `100%` }} />,
+    containerElement: <div style={{ height: `400px` }} />,
+    mapElement: <div style={{ height: `100%` }} />,
+    center: { lat: 25.03, lng: 121.6 },
+  }),
+  withStateHandlers(() => ({
+    isOpen: false,
+  }), {
+    onToggleOpen: ({ isOpen }) => () => ({
+      isOpen: !isOpen,
+    })
+  },{
+    setInitialMarker: (markers) => { 
+      if(markers != null && markers.length > 0) {
+        return  { lat: markers[1].latitude, lng: markers[1].longitude 
+      }
+    }}
+  }),
+  withScriptjs,
+  withGoogleMap
+)(props =>
+  <GoogleMap
+    defaultZoom={5}
+    defaultCenter={props.center}
+    defaultOptions={{ styles: demoFancyMapStyles }}
+  >
+    <InfoBox
+      options={{ closeBoxURL: ``, enableEventPropagation: true }}
+    >
+      <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>
+        <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
+          Hello, Taipei!
+        </div>
+      </div>
+    </InfoBox>
+    {/* {this.props.markers.map((marker, i) => (
             <Marker
               key={i}
-              onClick={this.onMarkerClick}
+              onClick={this.onToggleOpen}
               position={{ lat: marker.latitude, lng: marker.longitude }}
               name={'Current location'}
             />
-          ))}
-        {/* </MarkerClusterer> */}
-        <InfoWindow onClose={this.onInfoWindowClose}>
-            <div>
-              <h1>{this.state.selectedPlace.name}</h1>
-            </div>
-        </InfoWindow>
-      </Map>
-    );
-  }
-}
+          ))} */}
+    {/* <Marker
+      position={{ lat: 22.6273, lng: 120.3014 }}
+      onClick={props.onToggleOpen}
+    >
+      {props.isOpen && <InfoBox
+        onCloseClick={props.onToggleOpen}
+        options={{ closeBoxURL: ``, enableEventPropagation: true }}
+      >
+        <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>
+          <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
+            Hello, Kaohsiung!
+          </div>
+        </div>
+      </InfoBox>}
+    </Marker> */}
+  </GoogleMap>
+);
 
-export default GoogleApiWrapper({
-  apiKey: ("AIzaSyBkztZV6Py0-LpJVYmSJ3gT_DmMWq0M6Iw"),
-})(MapContainer)
+{/* <StyledMapWithAnInfoBox /> */}
+
+export default StyledMapWithAnInfoBox;

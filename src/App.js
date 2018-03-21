@@ -13,11 +13,11 @@ class App extends Component {
         <header className="header">
           <img src={logo} alt="logo" width="150" /> 
         </header>
-        <div className="section">
+        <main className="section">
             {/* <Register /> */}
             {/* <Login /> */}
             <Home />
-        </div>
+        </main>
       </React.Fragment>
     );
   }

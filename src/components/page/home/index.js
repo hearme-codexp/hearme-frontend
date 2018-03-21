@@ -1,9 +1,10 @@
 import React from 'react'
 import Maps from '../../maps'
+import Maps2 from '../../maps2'
 import axios from 'axios'
 import Graphic from '../../graphic'
-// import {Scale} from '@vs/scale'
-
+import Loading from '../../loading'
+import './home.css'
 
 // const history = [
 //     {
@@ -86,19 +87,20 @@ class Home extends React.Component {
     render(){
         const mapa = (
             <React.Fragment>
-                <Graphic />
-                <Maps markers={this.state.history}/>
+                        <Graphic />
+                        {/* <Maps2 /> */}
+                        <Maps markers={this.state.history}/>
             </React.Fragment>
         );
 
-        const loading = <p>Carregando...</p> 
+        const loading = <div className='load'><Loading /></div>;
         
-        if(this.state.history.length > 0){
+        if(this.state.history.length > 0)
             return mapa;
-        }
-        else { 
+        else 
             return loading;
-        }
+        
+            // return loading;
     }
 }
 
