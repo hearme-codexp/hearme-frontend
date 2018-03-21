@@ -32,8 +32,8 @@ class Home extends React.Component {
             this.setState(prevState => ({...prevState, markers: response.data}));
         })
         .catch(error => {
-            return [{latitude: -23.5612844, longitude: -46.6955538}];
             console.log('Error', error);
+            return [{latitude: -23.5612844, longitude: -46.6955538}];
         });
     }
     
