@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .load {
     margin: 0 auto;
     padding-top: 10rem;
@@ -5,7 +10,9 @@
 
 .content__graphic {
     text-align: center;
-    justify-content: center;
+}
+
+.content {
 }
 
 @media (min-width: 768px) {
@@ -23,7 +30,17 @@
 
 @media (min-width: 1200px) {
     .content__graphic {
-        /* width: 20%; */
-        margin:5rem 10rem;
+        margin: 0;
+        padding: 0 3rem;
+        width: 50%;
+    }
+
+    .content__map {
+        width: 50%;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
     }
 }
