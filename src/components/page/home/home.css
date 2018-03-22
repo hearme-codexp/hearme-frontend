@@ -3,8 +3,27 @@
     padding-top: 10rem;
 }
 
-.home {
-    display: flex;
-    justify-content: space-around;
-    align-content: space-between;
+.content__graphic {
+    text-align: center;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .content__graphic {
+        /* width: 40%; */
+        margin:0 5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .content__graphic {
+        margin: 0 10rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .content__graphic {
+        /* width: 20%; */
+        margin:5rem 10rem;
+    }
 }

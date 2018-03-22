@@ -1,6 +1,5 @@
 import React from 'react'
 import Maps from '../../maps'
-import Maps2 from '../../maps2'
 import axios from 'axios'
 import Graphic from '../../graphic'
 import Loading from '../../loading'
@@ -29,7 +28,7 @@ class Home extends React.Component {
         axios.get('api/Historico/cliente/1')
         .then(response => {
             console.log(response);
-            this.setState(prevState => ({...prevState, markers: response.data}));
+            this.setState(prevState => ({ ...prevState, markers: response.data}));
         })
         .catch(error => {
             console.log('Error', error);
@@ -40,8 +39,14 @@ class Home extends React.Component {
     render(){
         const mapa = (
             <React.Fragment>
-                        <Graphic />
-                        <Maps markers={this.state.markers}/>
+                        <div className="content">
+                            <div className="content__map">
+                                <Maps markers={this.state.markers}/>
+                            </div>
+                            <div className="content__graphic">
+                                <Graphic /> 
+                            </div>
+                        </div>
             </React.Fragment>
         );
         
