@@ -40,9 +40,9 @@ class Home extends React.Component {
         const mapa = (
             <React.Fragment>
                         <div className="content">
-                            <div className="content__map">
+                            {/* <div className="content__map">
                                 <Maps markers={this.state.markers}/>
-                            </div>
+                            </div> */}
                             <div className="content__graphic">
                                 <Graphic /> 
                             </div>
@@ -55,7 +55,7 @@ class Home extends React.Component {
         if(this.state.markers.length > 0)
             return mapa;
         else 
-            return loading;
+            return mapa;
     }
 }
 

@@ -10,9 +10,11 @@
 
 .content__graphic {
     text-align: center;
+    background-color: #3a00248a;
 }
 
 .content {
+    height: 80%;
 }
 
 @media (min-width: 768px) {

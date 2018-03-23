@@ -30,6 +30,7 @@
   flex-direction: column;
   align-content: space-between;
   background-image: linear-gradient(to bottom right, #3F0027, #f4f7f8, #f4f7f8);
+  height: 100%;
 }
 
 .header {
