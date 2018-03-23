@@ -35,3 +35,16 @@
     margin: 0;
 }
 
+@media (min-width: 768px) {
+
+    .button {
+        width: 8rem;
+        height: 2rem;       
+    }
+    
+    .button__create {        
+        font-size: 16px;
+        font-weight: 600;        
+    }
+}
+

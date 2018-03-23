@@ -1,0 +1,12 @@
+nav.navbar.fixed-top {
+    background-color:  transparent !important;
+}
+
+.img-desktop{
+    background-image: url("../images/street.jpg");
+    overflow: hidden;
+}
+
+body nav.shrink.bg-dark {
+    background-color: black !important;
+}

@@ -9,37 +9,37 @@ import './landing.css'
 class LandingPage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { width: props.width };
+        this.state = { height: props.height, width: props.width };
     }
 
     componentDidMount() {
-        this.setState({ height: window.innerWidth });
+        var self = this;
+        window.addEventListener("resize", () => {
+            self.setState({ height: window.innerHeight, width: window.innerWidth });
+        });
     }
 
     componentWillMount() {
-        this.setState({ width: window.innerWidth });
+        this.setState({ height: window.innerHeight, width: window.innerWidth });
     }
 
     render() {
         return (
-            <div id="outer-container">
-                <Menu pageWrapId={"page-wrap"} outerContainerId={"outer-container"}>
-                    <a id="home" className="menu-item" href="/">Home</a>
-                    <a id="about" className="menu-item" href="/about">About</a>
-                    <a id="contact" className="menu-item" href="/contact">Contact</a>
-                    <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
-                </Menu>
-                <div id="page-wrap">
+            <div class="">
+                
+                <div id="page-wrap" className={"img-desktop"} style={this.state.width > 768 ? {height: this.state.height} : {}}>
                     <div className="logo-container">
                         <img src={logo} className="logo" />
                     </div>
                     <div className="button-container">
+
                         <button className="button button__create">
                             Sign In
                         </button>
                     </div>
-                    <img src={this.state.width > 768 ? street : streetMobile} className="background" />
+                    {this.state.width <= 768 ? <img src={streetMobile} className="background" /> : null}
                 </div>
+                
             </div>
         )
     }
