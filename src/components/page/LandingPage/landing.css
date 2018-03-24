@@ -1,5 +1,7 @@
 .background {
     width: 100%;
+    background-image: url("street-mobile.jpg");
+    overflow: hidden;
 }
 
 .logo-container {
@@ -15,7 +17,7 @@
 }
 
 .button-container {
-    position: absolute;
+    position: relative;
     padding: 50% 35%;
 }
 
@@ -37,14 +39,23 @@
 
 @media (min-width: 768px) {
 
+    .background {
+        background-image: url("street.jpg");
+    }
+
     .button {
         width: 8rem;
-        height: 2rem;       
+        height: 2rem;
+        display: block !important;
+    }
+
+    .button-container{
+        width: 10%;
+        margin: 0 8.5%;
+        text-align: center;
     }
     
     .button__create {        
-        font-size: 16px;
-        font-weight: 600;        
+        font-size: 16px;      
     }
 }
-

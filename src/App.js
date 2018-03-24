@@ -4,6 +4,7 @@ import './App.css';
 import RegisterForm from './components/RegisterForm'
 import Login from './components/login'
 import LandingPage from './components/page/LandingPage'
+import hearMe from './logo-hearme-02.png'
 
 class App extends Component {
   render() {
@@ -12,7 +13,8 @@ class App extends Component {
         <React.Fragment>
           <header>
             <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-              <a className="navbar-brand" href="#">Carousel</a>
+              <img src={hearMe} className="hearme"/>
+              <a className="navbar-brand" href="#">  </a>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>

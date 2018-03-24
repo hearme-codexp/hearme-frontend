@@ -25,22 +25,21 @@ class LandingPage extends React.Component {
 
     render() {
         return (
-            <div class="">
-                
+            <div class="">                
                 <div id="page-wrap" className={"img-desktop"} style={this.state.width > 768 ? {height: this.state.height} : {}}>
                     <div className="logo-container">
                         <img src={logo} className="logo" />
                     </div>
                     <div className="button-container">
-
                         <button className="button button__create">
                             Sign In
                         </button>
                     </div>
-                    {this.state.width <= 768 ? <img src={streetMobile} className="background" /> : null}
-                </div>
-                
+                    {/* <div className="background" /> */}
+                    {this.state.width <= 768 ? <img src={streetMobile} className="background" /> : null}                   
+                </div>                
             </div>
+           
         )
     }
 }
