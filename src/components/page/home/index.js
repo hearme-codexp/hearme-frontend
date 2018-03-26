@@ -27,7 +27,7 @@ class Home extends React.Component {
     componentDidMount = () => {
         axios.get('api/Historico/cliente/1')
         .then(response => {
-            console.log(response);
+            // console.log(response);
             this.setState(prevState => ({ ...prevState, markers: response.data}));
         })
         .catch(error => {
@@ -37,14 +37,14 @@ class Home extends React.Component {
     }
     
     render(){
-        const mapa = (
+        const map = (
             <React.Fragment>
                         <div className="content">
-                            {/* <div className="content__map">
+                            <div className="content__map">
                                 <Maps markers={this.state.markers}/>
-                            </div> */}
+                            </div>
                             <div className="content__graphic">
-                                <Graphic /> 
+                                <Graphic data={this.state.markers}/> 
                             </div>
                         </div>
             </React.Fragment>
@@ -53,9 +53,9 @@ class Home extends React.Component {
         const loading = <div className='load'><Loading /></div>;
         
         if(this.state.markers.length > 0)
-            return mapa;
+            return map;
         else 
-            return mapa;
+            return loading;
     }
 }
 

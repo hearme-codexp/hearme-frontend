@@ -10,30 +10,35 @@
 
 .content__graphic {
     text-align: center;
-    background-color: #3a00248a;
 }
 
 .content {
-    height: 80%;
+    height: 70%;
 }
+
+/* .content__map {
+   border: 1px solid white;
+   box-shadow: 2px 1px 5px white;
+} */
 
 @media (min-width: 768px) {
     .content__graphic {
         /* width: 40%; */
-        margin:0 5rem;
+        padding:0 5rem;
     }
 }
 
 @media (min-width: 992px) {
     .content__graphic {
-        margin: 0 10rem;
+        padding: 0 10rem;
     }
 }
 
 @media (min-width: 1200px) {
+
     .content__graphic {
         margin: 0;
-        padding: 0 3rem;
+        padding: 0rem 3rem;
         width: 50%;
     }
 

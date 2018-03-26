@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (color = '#000') => {
+export default (color = '#FFF') => {
     return (<svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">
@@ -20,7 +20,7 @@ export default (color = '#000') => {
                     dur="0.9s"
                     repeatCount="indefinite" />
             </path>
-            <circle fill="#fff" cx="36" cy="18" r="1">
+            <circle fill="#000" cx="36" cy="18" r="1">
                 <animateTransform
                     attributeName="transform"
                     type="rotate"
