@@ -48,7 +48,8 @@ body {
   background-image: linear-gradient(to bottom right, #18002A, #18002A, #3F0027);
   padding: 0.6rem 0;
   text-align: center;
-}
+}  
+
 
 @keyframes App-logo-spin {
   from {
@@ -59,5 +60,12 @@ body {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
+  .header {
+    text-align: unset;
+  }
+
+  .logo {
+    padding-left: 3rem;
+  }
 }
