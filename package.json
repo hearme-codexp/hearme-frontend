@@ -3,13 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+
+    "@vx/axis": "^0.0.158",
+    "@vx/gradient": "^0.0.153",
+    "@vx/grid": "^0.0.158",
+    "@vx/mock-data": "^0.0.153",
+    "@vx/scale": "^0.0.153",
     "antd": "^2.0.6",
     "antd-init": "^2.0.6",
     "axios": "^0.18.0",
+    "chart.js": "^2.7.2",
     "dva-cli": "^0.9.2",
+    "google-map-react": "^0.34.0",
+    "google-maps-react": "^1.1.4",
     "react": "^16.2.0",
+    "react-chartjs-2": "^2.7.0",
     "react-dom": "^16.2.0",
+    "react-google-maps": "^9.4.5",
     "react-router-dom": "^4.2.2",
+
     "react-scripts": "1.1.1"
   },
   "scripts": {
@@ -20,7 +32,8 @@
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "devDependencies": {
-    "@storybook/react": "^3.3.14"
+    "@storybook/react": "^3.3.14",
+    "react-chartjs": "^1.2.0"
   },
   "plugins": [
     [

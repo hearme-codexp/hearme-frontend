@@ -4,6 +4,7 @@ import './App.css';
 import RegisterForm from './components/RegisterForm'
 import Login from './components/login'
 import logo from './logo-hearme-02.png'
+import Home from './components/page/home'
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             {/* <Login />  */}
             <Route exact path="/login" component={Login} />
             <Route path="/cadastro" component={RegisterForm} />
+            <Route path="/home" component={Home} />
           </div>
         </React.Fragment>
       </Router>
