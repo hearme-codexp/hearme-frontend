@@ -30,12 +30,11 @@ body {
 }
 .section {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   width: 100%;
   flex-wrap: wrap;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-content: space-between;
-  background-color: #3a0024;
   /* height: 100vh; */
   /* background-image: linear-gradient(to bottom right, #3F0027, #f4f7f8, #f4f7f8); */
   background-color: #3a0024;
@@ -68,5 +67,4 @@ body {
   .hearme {
     padding: 0;
   }
-
 }
