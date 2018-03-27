@@ -25,21 +25,91 @@ class LandingPage extends React.Component {
 
     render() {
         return (
-            <div class="">                
-                <div id="page-wrap" className={"img-desktop"} style={this.state.width > 768 ? {height: this.state.height} : {}}>
+            <div>
+                <div id="page-wrap" className="background" >
                     <div className="logo-container">
                         <img src={logo} className="logo" />
-                    </div>
-                    <div className="button-container">
                         <button className="button button__create">
-                            Sign In
+                            Sign Up
                         </button>
                     </div>
                     {/* <div className="background" /> */}
-                    {this.state.width <= 768 ? <img src={streetMobile} className="background" /> : null}                   
-                </div>                
+                    {/* {this.state.width <= 768 ? <img src={streetMobile} className="background" /> : null}                    */}
+                </div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
             </div>
-           
+
         )
     }
 }

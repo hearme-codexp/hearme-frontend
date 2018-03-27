@@ -8,7 +8,7 @@ nav.navbar.fixed-top {
 }
 
 body nav.shrink.bg-dark {
-    background-color: linear-gradient(to bottom right, #150026, #150026, #3a0024) !important;
+    background: linear-gradient(to bottom right, #150026, #150026, #3a0024);
 }
 
 button.btn.btn-outline-success.my-2.my-sm-0 {
@@ -19,6 +19,11 @@ button.btn.btn-outline-success.my-2.my-sm-0 {
     color: #007AF3;
     border-color: #007AF3;
     padding: 0.3rem 1.7rem;
+}
+
+button.btn.btn-outline-success.my-2.my-sm-0:hover {
+    background-color: #007AF3;
+    color: #fff;
 }
 
 span.navbar-toggler-icon {
@@ -40,5 +45,18 @@ input.form-control.mr-sm-2 {
 
 img.hearme {
     padding: 0;
-    width: 10%;
+    width: 30%;
+}
+
+@media (min-width: 768px) {
+  
+    img.hearme {
+      width: 15%;
+    }
+}
+
+@media (min-width: 1024px) {
+    img.hearme {
+        width: 10%;
+      }
 }
