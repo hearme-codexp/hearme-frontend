@@ -65,6 +65,12 @@
     $(document).ready(function () {
       var tamanhoPageWrap = $("#page-wrap").height();
       $(window).scroll(function () {
+        var pagewidth = $(window).width();
+        var shrinkSize = tamanhoPageWrap - 100;
+        if(pagewidth <= 768){
+          var pageHeight = $(window).height()
+          shrinkSize = tamanhoPageWrap - (pageHeight / 2) + 16;
+        }
         if ($(document).scrollTop() > (tamanhoPageWrap - 100)) {
           $('nav').addClass('shrink');
         } else {

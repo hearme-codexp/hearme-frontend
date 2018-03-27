@@ -5,7 +5,7 @@ import RegisterForm from './components/RegisterForm'
 import Login from './components/login'
 import Home from './components/page/home'
 import LandingPage from './components/page/LandingPage'
-import hearMe from './logo-hearme-02.png'
+import hearMe from '../src/img/logo-hearme-02.png'
 
 class App extends Component {
   render() {
