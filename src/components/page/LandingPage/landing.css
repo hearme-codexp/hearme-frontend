@@ -1,0 +1,66 @@
+.background {
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    background-image: url("./street-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.logo-container {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    padding: 3rem 0 0 0;
+    width: 45vw;
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    width: 100%;
+}
+
+.button {
+    width: 60%;
+    height: 1.8rem;
+    display: inline-block;       
+}
+
+.button__create {
+    font-family: 'Roboto Condensed', sans-serif;    
+    background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0);
+    border: none;
+    font-size: 12px;
+    font-weight: 300;
+    color: #fff;
+    border-radius: 0;
+    margin: 1rem;
+}
+
+@media (min-width: 768px) {
+
+    .background {
+        height: 100vh;
+        background-image: url("./street.jpg");
+    }
+
+    .button {
+        height: 2.3rem;
+    }
+    
+    .button__create {        
+        font-size: 16px;      
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .logo-container {
+        width: 30vw;
+    }
+
+}
