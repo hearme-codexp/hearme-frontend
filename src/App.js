@@ -17,7 +17,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route path="/cadastro" component={RegisterForm} />
             <Route path="/home" component={Home} />
-            <Route path={"/landing"} component={LandingPage} />            
+            <Route exact path={"/"} component={LandingPage} />            
           </main>
         </React.Fragment>
       </Router>

@@ -36,6 +36,7 @@ class LandingPage extends React.Component {
                     {/* <div className="background" /> */}
                     {/* {this.state.width <= 768 ? <img src={streetMobile} className="background" /> : null}                    */}
                 </div>
+                {/* <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
                 <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
                 <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
                 <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
@@ -106,8 +107,7 @@ class LandingPage extends React.Component {
                 <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
                 <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
                 <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
+                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div> */}
             </div>
 
         )
