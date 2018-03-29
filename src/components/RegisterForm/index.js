@@ -60,17 +60,17 @@ class RegistrationForm extends React.Component {
       },
     };
     const tailFormItemLayout = {
-      wrapperCol: {
-        xs: {
-          span: 24,
-          offset: 0,
+        wrapperCol: {
+          xs: {
+            span: 24,
+            offset: 0,
+          },
+          sm: {
+            span: 16,
+            offset: 8,
+          },
         },
-        sm: {
-          span: 16,
-          offset: 8,
-        },
-      },
-    };
+      };
 
     return (
       <Form onSubmit={this.handleSubmit} className="form--register">

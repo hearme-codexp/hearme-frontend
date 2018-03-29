@@ -1,0 +1,53 @@
+.form-contact {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    text-align: center;
+    align-content: center;  
+}
+
+.form-contact__items {
+    width: 100%;
+}
+
+.form-contact__informations {
+    width: 100%;
+}
+
+.form-contact__message {
+    width: 100%;
+}
+
+.button {
+    width: 100%;
+    height: 2.3rem;
+}
+
+.button__create {
+    font-family: 'Roboto Condensed', sans-serif;
+    background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0);
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 0;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .form-contact {
+        padding-top: 1rem;
+    }
+
+    /* .form-contact__informations {
+        width: 50%;
+    }
+    
+    .form-contact__message {
+        width: 50%;
+    } */
+  }
+
+  @media (min-width: 992px) {
+    .form-contact {
+    }
+}
