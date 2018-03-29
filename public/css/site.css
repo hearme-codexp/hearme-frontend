@@ -48,6 +48,10 @@ img.hearme {
     width: 30%;
 }
 
+.timeline-image {
+    background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0);
+}
+
 @media (min-width: 768px) {
   
     img.hearme {
