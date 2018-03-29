@@ -27,6 +27,9 @@ class Header extends React.Component {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/home">Home</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/footer">Footer</Link>
+                            </li>
                         </ul>
                         <form className="form-inline mt-2 mt-md-0">
                             <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
