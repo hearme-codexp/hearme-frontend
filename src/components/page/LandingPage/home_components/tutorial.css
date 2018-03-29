@@ -1,4 +1,12 @@
 
+h4 {
+    color: #fff;
+}
+
+.section-tutorial {
+    margin-top: 1.5rem;
+}
+
 .img-tutorial {
     position: relative;
     width: 100vw;
@@ -11,8 +19,12 @@
 
 @media (min-width: 768px) {
 
+    .section-tutorial {
+        margin-top: 4rem; 
+    }
+
     .img-tutorial {
         height: 100vh;
-        
+        margin-top: 4rem;    
     }
 }

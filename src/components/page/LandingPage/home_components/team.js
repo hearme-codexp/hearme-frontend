@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './team.css'
 
 class Team extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class Team extends Component {
 
     render() {
         return (
-            <section className="bg-light" id="team">
+            <section className="bg-light section-team" id="team">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 text-center">

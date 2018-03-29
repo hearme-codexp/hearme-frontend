@@ -14,7 +14,7 @@ class Tutorial extends Component {
 
     render() {
         return (
-            <section id="about">
+            <section id="about" className="section-tutorial">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 text-center">
@@ -84,8 +84,8 @@ class Tutorial extends Component {
                                 <li className="timeline-inverted">
                                     <div className="timeline-image">
                                         <h4>Be Part
-                        <br />Of Our
-                        <br />Story!</h4>
+                                        <br />Of Our
+                                        <br />Story!</h4>
                                     </div>
                                 </li>
                             </ul>
@@ -93,7 +93,7 @@ class Tutorial extends Component {
                     </div>
                 </div>  
                 <div> 
-                        <img src={tutorial} className="img-tutorial" />
+                    <img src={tutorial} className="img-tutorial" />
                 </div>              
             </section>
         )
