@@ -35,16 +35,16 @@
 
 @media (min-width: 768px) {
     .form-contact {
-        padding: 6rem 6rem 0 6rem;
+        padding-top: 1rem;
     }
 
-    .form-contact__informations {
+    /* .form-contact__informations {
         width: 50%;
     }
     
     .form-contact__message {
         width: 50%;
-    }
+    } */
   }
 
   @media (min-width: 992px) {

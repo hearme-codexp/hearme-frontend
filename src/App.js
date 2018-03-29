@@ -6,7 +6,7 @@ import Login from './components/login'
 import Home from './components/page/home'
 import LandingPage from './components/page/LandingPage'
 import Header from './components/header'
-import Contact from './components/contact'
+import Footer from './components/footer'
 
 class App extends Component {
   render() {
@@ -19,7 +19,7 @@ class App extends Component {
             <Route path="/cadastro" component={RegisterForm} />
             <Route path="/home" component={Home} />
             <Route exact path={"/"} component={LandingPage} />
-            <Route path={"/footer"} component={Contact} />
+            <Route path={"/footer"} component={Footer} />
           </main>
         </React.Fragment>
       </Router>

@@ -111,8 +111,8 @@ class Contact extends React.Component {
                                         })(
                                             <TextArea
                                             size='large' 
-                                            placeholder="Autosize height with minimum and maximum number of lines" 
-                                            autosize={{ minRows: 2, maxRows: 80 }} />
+                                            placeholder="Input your message" 
+                                            autosize={{ minRows: 5, maxRows: 80 }} />
                                         )}
                                 </FormItem>
                             </div>

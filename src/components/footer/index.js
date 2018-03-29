@@ -1,5 +1,6 @@
 import React from 'react'
 import Contact from '../contact'
+import './footer.css'
 
 class Footer extends React.Component {
 
@@ -8,8 +9,8 @@ class Footer extends React.Component {
             <div>
                 <div className="container">
                     <Contact />
-                    <div className="">
-                        <h3>Copyright &copy; 2018 Hear me. All Rights Reserved. </h3>
+                    <div className="container--copyright">
+                        <p>Copyright &copy; 2018 Hear me. All Rights Reserved. </p>
                     </div>
                 </div>
             </div>
