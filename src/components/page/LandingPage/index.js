@@ -10,7 +10,7 @@ import logo from './logo-hearme.png'
 import street from './street.jpg'
 import streetMobile from './street-mobile.jpg'
 import './landing.css'
-
+import Footer from '../../footer'
 
 class LandingPage extends React.Component {
     constructor(props) {
@@ -46,7 +46,8 @@ class LandingPage extends React.Component {
                 <Tutorial />
                 
                 <Team />
-
+                
+                <Footer />
 
             </div>
 
