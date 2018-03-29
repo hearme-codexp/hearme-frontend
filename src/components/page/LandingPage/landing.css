@@ -27,7 +27,7 @@
 .button {
     width: 60%;
     height: 1.8rem;
-    display: inline-block;       
+    display: inline-block;      
 }
 
 .button__create {
@@ -39,6 +39,17 @@
     color: #fff;
     border-radius: 0;
     margin: 1rem;
+}
+
+.img-tutorial {
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    background-image: url("./street-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -54,6 +65,10 @@
     
     .button__create {        
         font-size: 16px;      
+    }
+
+    .img-tutorial {
+        height: 100vh;
     }
 }
 

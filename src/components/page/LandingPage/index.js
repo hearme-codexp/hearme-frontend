@@ -1,5 +1,11 @@
 import React from 'react'
-import { slide as Menu } from 'react-burger-menu'
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+  } from 'react-router-dom'
+import Tutorial from './home_components/tutorial'
+import Team from './home_components/team';
 import logo from './logo-hearme.png'
 import street from './street.jpg'
 import streetMobile from './street-mobile.jpg'
@@ -36,78 +42,12 @@ class LandingPage extends React.Component {
                     {/* <div className="background" /> */}
                     {/* {this.state.width <= 768 ? <img src={streetMobile} className="background" /> : null}                    */}
                 </div>
-                {/* <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div>
-                <div>haiuehaoiehaiuehiuahdaçoifsçlksfdn</div> */}
+
+                <Tutorial />
+                
+                <Team />
+
+
             </div>
 
         )
