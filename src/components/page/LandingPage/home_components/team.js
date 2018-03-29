@@ -20,7 +20,7 @@ class Team extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-sm-4">
+                        <div className="col-md-3">
                             <div className="team-member">
                                 <img className="mx-auto rounded-circle" src="template/img/team/1.jpg" alt="" />
                                 <h4>Bruna</h4>
@@ -44,7 +44,7 @@ class Team extends Component {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-sm-4">
+                        <div className="col-md-3">
                             <div className="team-member">
                                 <img className="mx-auto rounded-circle" src="template/img/team/2.jpg" alt="" />
                                 <h4>Bruno</h4>
@@ -68,7 +68,7 @@ class Team extends Component {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-sm-4">
+                        <div className="col-md-3">
                             <div className="team-member">
                                 <img className="mx-auto rounded-circle" src="template/img/team/3.jpg" alt="" />
                                 <h4>Eduardo</h4>
@@ -92,7 +92,7 @@ class Team extends Component {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-sm-4">
+                        <div className="col-md-3">
                             <div className="team-member">
                                 <img className="mx-auto rounded-circle" src="template/img/team/1.jpg" alt="" />
                                 <h4>João</h4>
@@ -116,7 +116,7 @@ class Team extends Component {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-sm-4">
+                        <div className="col-md-4">
                             <div className="team-member">
                                 <img className="mx-auto rounded-circle" src="template/img/team/2.jpg" alt="" />
                                 <h4>Juliana</h4>
@@ -140,7 +140,7 @@ class Team extends Component {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-sm-4">
+                        <div className="col-md-4">
                             <div className="team-member">
                                 <img className="mx-auto rounded-circle" src="template/img/team/3.jpg" alt="" />
                                 <h4>Naila</h4>
@@ -164,7 +164,7 @@ class Team extends Component {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-sm-4">
+                        <div className="col-md-4">
                             <div className="team-member">
                                 <img className="mx-auto rounded-circle" src="template/img/team/1.jpg" alt="" />
                                 <h4>Viviane</h4>

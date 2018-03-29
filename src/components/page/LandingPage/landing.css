@@ -41,16 +41,6 @@
     margin: 1rem;
 }
 
-.img-tutorial {
-    position: relative;
-    width: 100vw;
-    height: 50vh;
-    background-image: url("./street-mobile.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: cover;
-    overflow: hidden;
-}
 
 @media (min-width: 768px) {
 
@@ -67,9 +57,6 @@
         font-size: 16px;      
     }
 
-    .img-tutorial {
-        height: 100vh;
-    }
 }
 
 @media (min-width: 1024px) {
