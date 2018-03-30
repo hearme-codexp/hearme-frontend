@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import './team.css'
+import BrunaLekich from './Bruna.jpg'
+import VivianeTeodoro from './Vivi.jpg'
+import JulianaRosa from './Juliana.jpg'
+import NailaFerrante from './Naila.jpg'
+import BrunoAlencar from './Bruno.jpg'
+import JoaoVitor from './Joao.jpg'
+import EduardoLima from './Eduardo.jpg'
 
 class Team extends Component {
     constructor(props) {
@@ -23,8 +30,8 @@ class Team extends Component {
                     <div className="row">
                         <div className="col-md-3">
                             <div className="team-member">
-                                <img className="mx-auto rounded-circle" src="template/img/team/1.jpg" alt="" />
-                                <h4>Bruna</h4>
+                                <img className="mx-auto rounded-circle" src={BrunaLekich} alt="" />
+                                <h4>Bruna Lekich</h4>
                                 <p className="text-muted">Mobile</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">
@@ -47,8 +54,8 @@ class Team extends Component {
                         </div>
                         <div className="col-md-3">
                             <div className="team-member">
-                                <img className="mx-auto rounded-circle" src="template/img/team/2.jpg" alt="" />
-                                <h4>Bruno</h4>
+                                <img className="mx-auto rounded-circle" src={BrunoAlencar} alt="" />
+                                <h4>Bruno Alencar</h4>
                                 <p className="text-muted">Front-End</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">
@@ -71,8 +78,8 @@ class Team extends Component {
                         </div>
                         <div className="col-md-3">
                             <div className="team-member">
-                                <img className="mx-auto rounded-circle" src="template/img/team/3.jpg" alt="" />
-                                <h4>Eduardo</h4>
+                                <img className="mx-auto rounded-circle" src={EduardoLima} alt="" />
+                                <h4>Eduardo Lima</h4>
                                 <p className="text-muted">Back-End</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">
@@ -95,8 +102,8 @@ class Team extends Component {
                         </div>
                         <div className="col-md-3">
                             <div className="team-member">
-                                <img className="mx-auto rounded-circle" src="template/img/team/1.jpg" alt="" />
-                                <h4>João</h4>
+                                <img className="mx-auto rounded-circle" src={JoaoVitor} alt="" />
+                                <h4>João Vitor</h4>
                                 <p className="text-muted">IoT</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">
@@ -119,8 +126,8 @@ class Team extends Component {
                         </div>
                         <div className="col-md-4">
                             <div className="team-member">
-                                <img className="mx-auto rounded-circle" src="template/img/team/2.jpg" alt="" />
-                                <h4>Juliana</h4>
+                                <img className="mx-auto rounded-circle" src={JulianaRosa} alt="" />
+                                <h4>Juliana Rosa</h4>
                                 <p className="text-muted">Front-End</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">
@@ -143,8 +150,8 @@ class Team extends Component {
                         </div>
                         <div className="col-md-4">
                             <div className="team-member">
-                                <img className="mx-auto rounded-circle" src="template/img/team/3.jpg" alt="" />
-                                <h4>Naila</h4>
+                                <img className="mx-auto rounded-circle" src={NailaFerrante} alt="" />
+                                <h4>Naila Ferrante</h4>
                                 <p className="text-muted">Back-End</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">
@@ -167,8 +174,8 @@ class Team extends Component {
                         </div>
                         <div className="col-md-4">
                             <div className="team-member">
-                                <img className="mx-auto rounded-circle" src="template/img/team/1.jpg" alt="" />
-                                <h4>Viviane</h4>
+                                <img className="mx-auto rounded-circle" src={VivianeTeodoro} alt="" />
+                                <h4>Viviane Teodoro</h4>
                                 <p className="text-muted">Mobile</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">

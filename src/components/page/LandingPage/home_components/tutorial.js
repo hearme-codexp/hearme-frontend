@@ -83,7 +83,7 @@ class Tutorial extends Component {
                                 </li>
                                 <li className="timeline-inverted">
                                     <div className="timeline-image">
-                                        <h4>Be Part
+                                        <h4 className="end-tutorial">Be Part
                                         <br />Of Our
                                         <br />Story!</h4>
                                     </div>
