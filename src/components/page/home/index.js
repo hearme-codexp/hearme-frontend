@@ -17,7 +17,8 @@ class Home extends React.Component {
         //     {latitude: -23.5612844, longitude: -46.6933738},
         //     {latitude: -23.5612844, longitude: -46.6965538},
         // ]
-        markers: []
+        markers: [],
+        graphicData:[]
     }
 
     componentWillMount() {
@@ -34,6 +35,16 @@ class Home extends React.Component {
             console.log('Error', error);
             return [{latitude: -23.5612844, longitude: -46.6955538}];
         });
+
+        axios.get('api/Historico/cliente/Graph/1')
+        .then(response => {
+            // console.log(response);
+            this.setState(prevState => ({ ...prevState, graphicData: response.data}));
+        })
+        .catch(error => {
+            console.log('Error', error);
+            return [];
+        });
     }
     
     render(){
@@ -44,7 +55,7 @@ class Home extends React.Component {
                                 <Maps markers={this.state.markers}/>
                             </div>
                             <div className="content__graphic">
-                                <Graphic data={this.state.markers}/> 
+                                <Graphic data={this.state.graphicData}/> 
                             </div>
                         </div>
             </React.Fragment>
