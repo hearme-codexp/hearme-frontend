@@ -9,8 +9,8 @@ import Home from '../page/home'
 import axios from 'axios'
 
 const FormItem = Form.Item;
-axios.defaults.baseURL = 'https://hearme-app.herokuapp.com/';
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+// axios.defaults.baseURL = 'https://hearme-app.herokuapp.com/';
+// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 class Login extends React.Component {
   state = {
@@ -24,6 +24,8 @@ class Login extends React.Component {
       }))
     })
     
+    console.log("values",values);
+
     axios.post('api/Usuario/Login', { email: values.userName, senha: values.password})
     .then(response => {
         console.log("Logged");
@@ -49,11 +51,10 @@ class Login extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
 
-    const { from } = this.props.location.state || { from: { pathname: '/' } }
+    const { from } = this.props.location.state || { from: { pathname: '/home' } }
     const { redirectToReferrer } = this.state
 
     if (redirectToReferrer === true) {
-      console.log("passou", from);
       return <Redirect to={from} />
     }
     
