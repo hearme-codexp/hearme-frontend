@@ -1,10 +1,10 @@
 
-h4 {
+.end-tutorial {
     color: #fff;
 }
 
 .section-tutorial {
-    margin-top: 1.5rem;
+    padding-top: 1.5rem;
 }
 
 .img-tutorial {
@@ -20,7 +20,7 @@ h4 {
 @media (min-width: 768px) {
 
     .section-tutorial {
-        margin-top: 4rem; 
+        padding-top: 4rem; 
     }
 
     .img-tutorial {

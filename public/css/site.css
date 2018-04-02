@@ -22,7 +22,7 @@ button.btn.btn-outline-success.my-2.my-sm-0 {
 }
 
 button.btn.btn-outline-success.my-2.my-sm-0:hover {
-    background-color: #007AF3;
+    background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0);
     color: #fff;
 }
 
