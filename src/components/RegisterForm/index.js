@@ -7,6 +7,9 @@ import './register.css'
 const FormItem = Form.Item;
 const Option = Select.Option;
 
+axios.defaults.baseURL = 'https://hearme-app.herokuapp.com/';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+
 class RegistrationForm extends React.Component {
   state = {
     confirmDirty: false,
@@ -15,8 +18,15 @@ class RegistrationForm extends React.Component {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        // console.log('Received values of form: ', values);
-        axios.post('', values)
+        console.log('Received values of form: ', values);
+        axios.post('api/Cadastrar/Web',{
+          nome: values.nickname,
+          email: values.email,
+          senha: values.password,
+          dataDeNascimento: values.birthDate,
+          genero: values.genre,
+          grauDeDeficiencia: values.deficiency
+        })
         .then(function (response) {
             console.log(response);
         })
@@ -137,7 +147,12 @@ class RegistrationForm extends React.Component {
         {...formItemLayout}
         label="Date of birth"
         >
+            
+            {getFieldDecorator('birthDate', {
+            rules: [{ required: true, message: 'Please select your birthDate!' }],
+          })(
             <DatePicker/>
+          )}
         </FormItem>
         <FormItem
           {...formItemLayout}
