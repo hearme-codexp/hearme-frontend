@@ -8,7 +8,8 @@ class Header extends React.Component {
         return (
                 <header>
                     <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                    <img src={logo} className="hearme"/>
+                    <Link to="/"><img src={logo} className="hearme"/></Link>
+                    {/* <img src={logo} className="hearme"/> */}
                     <a className="navbar-brand" href="#">  </a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -22,15 +23,18 @@ class Header extends React.Component {
                                 <Link className="nav-link" to="/login">Login</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/cadastro">Cadastro</Link>
+                                <Link className="nav-link" to="/register">Cadastro</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/home">Home</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/footer">Footer</Link>
+                            </li>
                         </ul>
                         <form className="form-inline mt-2 mt-md-0">
                             <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Sign In</button>
+                            <Link to="/login"><button className="btn btn-outline-success my-2 my-sm-0" >Sign In</button></Link>
                         </form>
                     </div>
                     </nav>

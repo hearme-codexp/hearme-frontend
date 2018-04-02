@@ -10,7 +10,7 @@ import logo from './logo-hearme.png'
 import street from './street.jpg'
 import streetMobile from './street-mobile.jpg'
 import './landing.css'
-
+import Footer from '../../footer'
 
 class LandingPage extends React.Component {
     constructor(props) {
@@ -35,9 +35,9 @@ class LandingPage extends React.Component {
                 <div id="page-wrap" className="background" >
                     <div className="logo-container">
                         <img src={logo} className="logo" />
-                        <button className="button button__create">
+                        <Link to="/register" className="button button__create">
                             Sign Up
-                        </button>
+                        </Link>
                     </div>
                     {/* <div className="background" /> */}
                     {/* {this.state.width <= 768 ? <img src={streetMobile} className="background" /> : null}                    */}
@@ -46,7 +46,8 @@ class LandingPage extends React.Component {
                 <Tutorial />
                 
                 <Team />
-
+                
+                <Footer />
 
             </div>
 

@@ -2,21 +2,64 @@ import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import 'antd/dist/antd.css'
 import './login.css'
+import { BrowserRouter as Router, Route, Redirect, Link, withRouter } from 'react-router-dom'
+import { authenticate } from '../../functions'
+import PrivateRoute from '../privateRoute'
+import Home from '../page/home'
+import axios from 'axios'
+
 const FormItem = Form.Item;
+axios.defaults.baseURL = 'https://hearme-app.herokuapp.com/';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 class Login extends React.Component {
+  state = {
+    redirectToReferrer: false
+  }
+
+  login = (values) => {
+    authenticate(() => {
+      this.setState(() => ({
+        redirectToReferrer: true
+      }))
+    })
+    
+    axios.post('api/Usuario/Login', { email: values.userName, senha: values.password})
+    .then(response => {
+        console.log("Logged");
+        // this.setState(prevState => ({ ...prevState, markers: response.data}));
+    })
+    .catch(error => {
+        console.log('Error', error);
+        return [{latitude: -23.5612844, longitude: -46.6955538}];
+    });
+
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
+        this.login(values);
       }
     });
   }
 
   render() {
     const { getFieldDecorator } = this.props.form;
+
+    const { from } = this.props.location.state || { from: { pathname: '/' } }
+    const { redirectToReferrer } = this.state
+
+    if (redirectToReferrer === true) {
+      console.log("passou", from);
+      return <Redirect to={from} />
+    }
+    
     return (
+      <React.Fragment>
+      
       <Form onSubmit={this.handleSubmit} className="login-form">
         <FormItem className="tamanho">
           {getFieldDecorator('userName', {
@@ -45,9 +88,10 @@ class Login extends React.Component {
           <Button type="primary" htmlType="submit" className="button button__create">
             Log in
           </Button>
-          Or <a href="">register now!</a>
+          Or <Link to="/register">register now!</Link>
         </FormItem>
       </Form>
+      </React.Fragment>
     );
   }
 }
