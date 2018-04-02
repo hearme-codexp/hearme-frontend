@@ -1,3 +1,15 @@
 .section-team {
-    
+    padding-top: 2rem; 
+}
+
+.social-link:hover {
+    background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0);
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+
+    .section-team {
+        padding-top: 4rem; 
+    }
 }

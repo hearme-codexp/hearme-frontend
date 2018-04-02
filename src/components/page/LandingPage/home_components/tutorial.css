@@ -4,7 +4,7 @@
 }
 
 .section-tutorial {
-    margin-top: 1.5rem;
+    padding-top: 1.5rem;
 }
 
 .img-tutorial {
@@ -20,7 +20,7 @@
 @media (min-width: 768px) {
 
     .section-tutorial {
-        margin-top: 4rem; 
+        padding-top: 4rem; 
     }
 
     .img-tutorial {
