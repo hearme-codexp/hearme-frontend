@@ -74,7 +74,7 @@ class Login extends React.Component {
           <Button type="primary" htmlType="submit" className="button button__create">
             Log in
           </Button>
-          Or <a href="">register now!</a>
+          Or <Link to="/register">register now!</Link>
         </FormItem>
       </Form>
       </React.Fragment>

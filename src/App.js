@@ -111,7 +111,7 @@ class App extends Component {
           <Header />
           <main className="section">
             <Route exact path="/login" component={Login}  />
-            <Route path="/cadastro" component={RegisterForm} />
+            <Route path="/register" component={RegisterForm} />
             <Route exact path="/" component={LandingPage} />
             <Route path="/footer" component={Footer} />
             <PrivateRoute path="/home" component={Home} isAuthenticated={fakeAuth()}/>
