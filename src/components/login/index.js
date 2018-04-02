@@ -6,20 +6,34 @@ import { BrowserRouter as Router, Route, Redirect, Link, withRouter } from 'reac
 import { authenticate } from '../../functions'
 import PrivateRoute from '../privateRoute'
 import Home from '../page/home'
+import axios from 'axios'
 
 const FormItem = Form.Item;
+axios.defaults.baseURL = 'https://hearme-app.herokuapp.com/';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 class Login extends React.Component {
   state = {
     redirectToReferrer: false
   }
 
-  login = () => {
+  login = (values) => {
     authenticate(() => {
       this.setState(() => ({
         redirectToReferrer: true
       }))
     })
+    
+    axios.post('api/Usuario/Login', { email: values.userName, senha: values.password})
+    .then(response => {
+        console.log("Logged");
+        // this.setState(prevState => ({ ...prevState, markers: response.data}));
+    })
+    .catch(error => {
+        console.log('Error', error);
+        return [{latitude: -23.5612844, longitude: -46.6955538}];
+    });
+
   }
 
   handleSubmit = (e) => {
@@ -27,7 +41,7 @@ class Login extends React.Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
-        this.login();
+        this.login(values);
       }
     });
   }
