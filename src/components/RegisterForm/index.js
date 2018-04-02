@@ -3,6 +3,7 @@ import { Form, Input, Tooltip, Icon, Select, Checkbox, Button } from 'antd';
 import { DatePicker } from 'antd';
 import axios from 'axios'
 import './register.css'
+import Redirect from 'react-router-dom/Redirect';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -13,24 +14,28 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 class RegistrationForm extends React.Component {
   state = {
     confirmDirty: false,
+    registered: false
   };
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
-      if (!err) {
+      if (!err) { 
         console.log('Received values of form: ', values);
         axios.post('api/Cadastrar/Web',{
           nome: values.nickname,
           email: values.email,
           senha: values.password,
           dataDeNascimento: values.birthDate,
-          genero: values.genre,
+          genero: values.genrer,
           grauDeDeficiencia: values.deficiency
         })
-        .then(function (response) {
-            console.log(response);
+        .then((response) => {
+            console.log(response, this.state);
+
+            this.setState(prevState => ({ ...prevState, registered: true }))
         })
-        .catch(function (error) {
+        .catch((error) => {
             console.log(error);
         });
       }
@@ -81,6 +86,11 @@ class RegistrationForm extends React.Component {
           },
         },
       };
+
+    if(this.state.registered === true){
+      console.log("teste");
+      return <Redirect to="/login"/>
+    }
 
     return (
       <Form onSubmit={this.handleSubmit} className="form--register">
@@ -162,24 +172,24 @@ class RegistrationForm extends React.Component {
             rules: [{ required: true, message: 'Please select your deficiency!' }],
           })(
             <Select style={{ width: '30%' }}>
-                <Option value="Low">Low</Option>
-                <Option value="Medium">Medium</Option>
-                <Option value="High">High</Option>
-                <Option value="Deafness">Deafness</Option>
+                <Option value="0">Low</Option>
+                <Option value="1">Medium</Option>
+                <Option value="2">High</Option>
+                <Option value="3">Deafness</Option>
             </Select>
           )}
         </FormItem>
         <FormItem
           {...formItemLayout}
-          label="Genre"
+          label="Genrer"
         >
-          {getFieldDecorator('genre', {
-            rules: [{ required: true, message: 'Please select your genre!' }],
+          {getFieldDecorator('genrer', {
+            rules: [{ required: true, message: 'Please select your genrer!' }],
           })(
             <Select style={{ width: '30%' }}>
-                <Option value="Female">Female</Option>
-                <Option value="Male">Male</Option>
-                <Option value="Other">Other</Option>
+                <Option value="0">Female</Option>
+                <Option value="1">Male</Option>
+                <Option value="2">Other</Option>
             </Select>
           )}
         </FormItem>
