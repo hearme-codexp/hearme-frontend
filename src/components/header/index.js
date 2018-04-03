@@ -34,7 +34,7 @@ class Header extends React.Component {
                         </ul>
                         <form className="form-inline mt-2 mt-md-0">
                             <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
-                            <Link to="/login"><button className="btn btn-outline-success my-2 my-sm-0" >Sign In</button></Link>
+                            <Link to="/login" className="btn btn-outline-success my-2 my-sm-0">Sign In</Link>
                         </form>
                     </div>
                     </nav>

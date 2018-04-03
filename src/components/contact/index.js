@@ -120,7 +120,7 @@ class Contact extends React.Component {
                     <div className="row">
                         <div className="col-md-10">
                             <FormItem {...tailFormItemLayout}>
-                                <Button type="primary" htmlType="submit" className="button button__create">Register</Button>
+                                <Button type="primary" htmlType="submit" className="button button__create col-4">Register</Button>
                             </FormItem>
                         </div>
                     </div> 

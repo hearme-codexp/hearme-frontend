@@ -1,6 +1,6 @@
 .form-contact {
     width: 100%;
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     text-align: center;
     align-content: center;  
@@ -34,8 +34,9 @@
 } */
 
 @media (min-width: 768px) {
+
     .form-contact {
-        padding-top: 1rem;
+        padding-top: 4rem;
     }
 
     /* .form-contact__informations {
@@ -49,5 +50,6 @@
 
   @media (min-width: 992px) {
     .form-contact {
+        padding-top: 6rem;
     }
 }

@@ -1,5 +1,5 @@
 .section-team {
-    padding-top: 2rem; 
+    padding: 2rem 0; 
 }
 
 .social-link:hover {
@@ -10,6 +10,6 @@
 @media (min-width: 768px) {
 
     .section-team {
-        padding-top: 4rem; 
+        padding: 4rem 0; 
     }
 }
