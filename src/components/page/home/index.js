@@ -46,11 +46,11 @@ class Home extends React.Component {
             return [];
         });
     }
-    
+        
     render(){
         const loading = <div className='load'><Loading /></div>;
         const maps = <Maps markers={this.state.markers}/>;
-        const graph= <Graphic data={this.state.graphicData}/>;
+        const graph= <Graphic graphicData={this.state.graphicData}/>;
 
         const complete = (
             <React.Fragment>
@@ -59,7 +59,7 @@ class Home extends React.Component {
                                 {this.state.markers.length > 0 ?  maps : loading}
                             </div>
                             <div className="content__graphic">
-                                 {this.state.markers.length > 0 ?  graph : loading}
+                                 {this.state.graphicData.length > 0 ?  graph : loading}
                             </div>
                         </div>
             </React.Fragment>
