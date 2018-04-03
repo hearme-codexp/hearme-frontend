@@ -18,7 +18,7 @@
     width: 100%;
 }
 
-.button {
+/* .button {
     width: 100%;
     height: 2.3rem;
 }
@@ -31,7 +31,7 @@
     color: #fff;
     border-radius: 0;
     margin: 0;
-}
+} */
 
 @media (min-width: 768px) {
     .form-contact {

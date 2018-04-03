@@ -43,10 +43,10 @@ input.form-control.mr-sm-2 {
     border-radius: 0;
 }
 
-img.hearme {
+/* img.hearme {
     padding: 0;
     width: 30%;
-}
+} */
 
 .timeline-image {
     background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0);
