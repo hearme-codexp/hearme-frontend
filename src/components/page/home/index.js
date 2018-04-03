@@ -38,7 +38,7 @@ class Home extends React.Component {
 
         axios.get('api/Historico/cliente/Graph/1')
         .then(response => {
-            // console.log(response);
+            console.log(response);
             this.setState(prevState => ({ ...prevState, graphicData: response.data}));
         })
         .catch(error => {
@@ -46,27 +46,26 @@ class Home extends React.Component {
             return [];
         });
     }
-    
+        
     render(){
-        const map = (
+        const loading = <div className='load'><Loading /></div>;
+        const maps = <Maps markers={this.state.markers}/>;
+        const graph= <Graphic graphicData={this.state.graphicData}/>;
+
+        const complete = (
             <React.Fragment>
                         <div className="content">
                             <div className="content__map">
-                                <Maps markers={this.state.markers}/>
+                                {this.state.markers.length > 0 ?  maps : loading}
                             </div>
                             <div className="content__graphic">
-                                <Graphic data={this.state.graphicData}/> 
+                                 {this.state.graphicData.length > 0 ?  graph : loading}
                             </div>
                         </div>
             </React.Fragment>
         );
         
-        const loading = <div className='load'><Loading /></div>;
-        
-        if(this.state.markers.length > 0)
-            return map;
-        else 
-            return loading;
+        return complete;
     }
 }
 
