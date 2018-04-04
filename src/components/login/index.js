@@ -29,8 +29,8 @@ class Login extends React.Component {
     axios.post('api/Usuario/Login', { email: values.userName, senha: values.password})
     .then(response => {
         console.log("Logged");
+        this.props.onLogin();
         this.setState({redirectToReferrer: true})
-        this.props.onLogin(true);
     })
     .catch(error => {
         console.log('Error', error);
