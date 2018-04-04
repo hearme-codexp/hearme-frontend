@@ -52,7 +52,7 @@ input.form-control.mr-sm-2 {
     background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0);
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   
     img.hearme {
       width: 15%;
@@ -63,4 +63,4 @@ input.form-control.mr-sm-2 {
     img.hearme {
         width: 10%;
       }
-}
+} */
