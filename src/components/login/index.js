@@ -18,22 +18,22 @@ class Login extends React.Component {
   }
 
   login = (values) => {
-    authenticate(() => {
-      this.setState(() => ({
-        redirectToReferrer: true
-      }))
-    })
+    // authenticate(() => {
+    //   this.setState(() => ({
+    //     redirectToReferrer: true
+    //   }))
+    // })
     
     console.log("values",values);
 
     axios.post('api/Usuario/Login', { email: values.userName, senha: values.password})
     .then(response => {
         console.log("Logged");
-        // this.setState(prevState => ({ ...prevState, markers: response.data}));
+        this.setState({redirectToReferrer: true})
+        this.props.onLogin(true);
     })
     .catch(error => {
         console.log('Error', error);
-        return [{latitude: -23.5612844, longitude: -46.6955538}];
     });
 
   }
@@ -50,10 +50,10 @@ class Login extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-
-    const { from } = this.props.location.state || { from: { pathname: '/home' } }
+    const { from } = this.props.location.state || { from: { pathname: '/' } }
     const { redirectToReferrer } = this.state
-
+    
+    console.log("State changed", redirectToReferrer)
     if (redirectToReferrer === true) {
       return <Redirect to={from} />
     }
