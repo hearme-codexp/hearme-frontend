@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button, Checkbox, notification } from 'antd';
 import 'antd/dist/antd.css'
 import './login.css'
 import { BrowserRouter as Router, Route, Redirect, Link, withRouter } from 'react-router-dom'
@@ -12,6 +12,13 @@ const FormItem = Form.Item;
 // axios.defaults.baseURL = 'https://hearme-app.herokuapp.com/';
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
+const openNotification = (props) => {
+  notification.open({
+    message: props.message,
+    description: props.description
+  });
+};
+
 class Login extends React.Component {
   state = {
     redirectToReferrer: false
@@ -23,17 +30,18 @@ class Login extends React.Component {
     //     redirectToReferrer: true
     //   }))
     // })
-    
-    console.log("values",values);
 
     axios.post('api/Usuario/Login', { email: values.userName, senha: values.password})
     .then(response => {
         console.log("Logged");
         this.props.onLogin();
         this.setState({redirectToReferrer: true})
+        openNotification({message: `Wellcome ${values.userName}!`, description: `You are able to see all of alerts stories.`});
     })
     .catch(error => {
-        console.log('Error', error);
+        console.log('Error: User', error.data); 
+        // openNotification({message: `ERROR: ${error}`, description: `Please, correct the error, and try again.`});
+        openNotification({message: `ERROR: User or password entered not valid`, description: `Please, correct the error, and try again.`});
     });
 
   }
