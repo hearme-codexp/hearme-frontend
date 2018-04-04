@@ -75,6 +75,9 @@ import { fakeAuth } from './functions.js'
 
 class App extends Component {
  
+  state ={
+    isAuthenticated : false
+  }
   // fakeAuth = {
   //   isAuthenticated: false,
   //   authenticate(cb) {
@@ -104,16 +107,18 @@ class App extends Component {
   // }
 
   render() {
+    const self = this;
     return (
       <Router>
         <React.Fragment>
           <Header />
           <main className="section">
-            <Route exact path="/login" component={Login}  />
+            <Route exact path="/login"  render={(props) => <Login {...props} onLogin={() => {
+              self.setState({isAuthenticated : true})}}></Login>}   />
             <Route path="/register" component={RegisterForm} />
             <Route exact path="/" component={LandingPage} />
             <Route path="/footer" component={Footer} />
-            <PrivateRoute path="/home" component={Home} isAuthenticated={fakeAuth()}/>
+            <PrivateRoute path="/home" component={Home} isAuthenticated={this.state.isAuthenticated}/>
           </main>
         </React.Fragment>
       </Router>

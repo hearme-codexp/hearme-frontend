@@ -2,6 +2,7 @@ import React from 'react'
 import { Form, Row, Col, Input, Tooltip, Icon, Select, Checkbox, Button } from 'antd';
 import axios from 'axios'
 import './contact.css'
+import { openNotification } from '../../functions'
 
 const { TextArea } = Input;
 const FormItem = Form.Item;
@@ -17,12 +18,15 @@ class Contact extends React.Component {
         this.props.form.validateFieldsAndScroll((err, values) => {
           if (!err) {
             // console.log('Received values of form: ', values);
+            
             axios.post('', values)
             .then(function (response) {
                 console.log(response);
+                openNotification({message: `Your contact was sent successfully!`, description: `Thanks for submit.`}) 
             })
             .catch(function (error) {
                 console.log(error);
+                openNotification({message: `Your contact was sent successfully!`, description: `Thanks for submit.`}) 
             });
           }
         });
