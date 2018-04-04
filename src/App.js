@@ -109,7 +109,6 @@ class App extends Component {
 
   render() {
     const self = this;
-    console.log("authenticated",this.state.isAuthenticated)
     return (
       <Router>
         <React.Fragment>
