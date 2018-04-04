@@ -8,7 +8,7 @@
     padding-top: 10rem;
 }
 
-.content__graphic {
+.content__graphic, .content__map {
     text-align: center;
 }
 
