@@ -11,7 +11,7 @@ body nav.shrink.bg-dark {
     background: linear-gradient(to bottom right, #150026, #150026, #3a0024);
 }
 
-button.btn.btn-outline-success.my-2.my-sm-0 {
+a.btn.btn-outline-success.my-2.my-sm-0 {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 12px;
     font-weight: 300;
@@ -21,8 +21,8 @@ button.btn.btn-outline-success.my-2.my-sm-0 {
     padding: 0.3rem 1.7rem;
 }
 
-button.btn.btn-outline-success.my-2.my-sm-0:hover {
-    background-color: #007AF3;
+a.btn.btn-outline-success.my-2.my-sm-0:hover {
+    background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0);
     color: #fff;
 }
 
@@ -43,16 +43,16 @@ input.form-control.mr-sm-2 {
     border-radius: 0;
 }
 
-img.hearme {
+/* img.hearme {
     padding: 0;
     width: 30%;
-}
+} */
 
 .timeline-image {
     background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0);
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   
     img.hearme {
       width: 15%;
@@ -63,4 +63,4 @@ img.hearme {
     img.hearme {
         width: 10%;
       }
-}
+} */

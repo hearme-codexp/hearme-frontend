@@ -6,11 +6,13 @@ import {
   } from 'react-router-dom'
 import Tutorial from './home_components/tutorial'
 import Team from './home_components/team';
+import Footer from '../../footer'
 import logo from './logo-hearme.png'
 import street from './street.jpg'
 import streetMobile from './street-mobile.jpg'
 import './landing.css'
-import Footer from '../../footer'
+import '../../Button/button.css'
+
 
 class LandingPage extends React.Component {
     constructor(props) {

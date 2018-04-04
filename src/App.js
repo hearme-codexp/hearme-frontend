@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Link, withRouter } from 'react-router-dom'
-
 import './App.css';
 import RegisterForm from './components/RegisterForm'
 import Login from './components/login'
