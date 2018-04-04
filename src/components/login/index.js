@@ -19,10 +19,10 @@ class Login extends React.Component {
   login = (values) => {
     axios.post('api/Usuario/Login', { email: values.userName, senha: values.password})
     .then(response => {
-        console.log("Logged");
+        console.log("Logged", response);
         this.props.onLogin();
         this.setState({redirectToReferrer: true})
-        openNotification({message: `Wellcome ${values.userName}!`, description: `You are able to see all of alerts stories.`});
+        openNotification({message: `Wellcome ${response.data.nome}!`, description: `You are able to see all of alerts stories.`});
     })
     .catch(error => {
         console.log('Error: User', error.data); 
