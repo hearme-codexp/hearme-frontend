@@ -5,6 +5,16 @@
     text-align: center;
   }  
   
+  .home-button{
+    width: 10%;
+    height: 100%;
+  }
+
+  .hearme {
+    display: block;
+    width: 100%;    
+  }
+
   @keyframes App-logo-spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -15,8 +25,5 @@
     .header {
       text-align: unset;
     }
-  
-    .logo {
-      padding-left: 3rem;
-    }
+
   }

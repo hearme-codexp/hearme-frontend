@@ -18,11 +18,11 @@ class Tutorial extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 text-center">
-                            <h2 className="section-heading text-uppercase">About</h2>
-                            <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                            <h2 className="section-heading text-uppercase">How to use your gadget</h2>
+                            {/* <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> */}
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="row section-tutorial__timeline">
                         <div className="col-lg-12">
                             <ul className="timeline">
                                 <li>
@@ -31,11 +31,12 @@ class Tutorial extends Component {
                                     </div>
                                     <div className="timeline-panel">
                                         <div className="timeline-heading">
-                                            <h4>2009-2011</h4>
-                                            <h4 className="subheading">Our Humble Beginnings</h4>
+                                            <h4 className="subheading">Download the App</h4>
                                         </div>
                                         <div className="timeline-body">
-                                            <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                            <p className="text-muted">
+                                                You can download the app on a <a href="https://play.google.com/store" target="_blank">Play Store</a>!
+                                            </p>
                                         </div>
                                     </div>
                                 </li>
@@ -45,11 +46,12 @@ class Tutorial extends Component {
                                     </div>
                                     <div className="timeline-panel">
                                         <div className="timeline-heading">
-                                            <h4>March 2011</h4>
-                                            <h4 className="subheading">An Agency is Born</h4>
+                                            <h4 className="subheading">Create an Account</h4>
                                         </div>
                                         <div className="timeline-body">
-                                            <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                            <p className="text-muted">
+                                                To create an account <a href="http://localhost:3000/register">click here</a>!
+                                            </p>
                                         </div>
                                     </div>
                                 </li>
@@ -59,11 +61,21 @@ class Tutorial extends Component {
                                     </div>
                                     <div className="timeline-panel">
                                         <div className="timeline-heading">
-                                            <h4>December 2012</h4>
-                                            <h4 className="subheading">Transition to Full Service</h4>
+                                            <h4 className="subheading">Connect your Gadget</h4>
                                         </div>
-                                        <div className="timeline-body">
-                                            <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                        <div className="timeline-body">   
+                                            {/* <p className="text-muted">Now you need pair your device using bluetooth to start.</p>*/}
+                                            <ul>
+                                                <li>
+                                                    <p className="text-muted">Turn on the bluetooth device.</p>
+                                                </li>
+                                                <li> 
+                                                    <p className="text-muted">On your phone, open the Hear.Me app.</p>
+                                                </li>
+                                                <li> 
+                                                    <p className="text-muted">Tap Set it up.</p>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </li>
@@ -73,18 +85,14 @@ class Tutorial extends Component {
                                     </div>
                                     <div className="timeline-panel">
                                         <div className="timeline-heading">
-                                            <h4>July 2014</h4>
-                                            <h4 className="subheading">Phase Two Expansion</h4>
-                                        </div>
-                                        <div className="timeline-body">
-                                            <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                            <h4 className="subheading">Good! We are already connected!</h4>
                                         </div>
                                     </div>
                                 </li>
                                 <li className="timeline-inverted">
                                     <div className="timeline-image">
-                                        <h4 className="end-tutorial">Be Part
-                                        <br />Of Our
+                                        <h4 className="end-tutorial">Make
+                                        <br />Your
                                         <br />Story!</h4>
                                     </div>
                                 </li>

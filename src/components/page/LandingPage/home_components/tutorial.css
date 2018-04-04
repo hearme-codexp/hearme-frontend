@@ -17,6 +17,10 @@
     overflow: hidden;
 }
 
+.section-tutorial__timeline {
+    padding-top: 3rem;
+}
+
 @media (min-width: 768px) {
 
     .section-tutorial {
@@ -26,5 +30,9 @@
     .img-tutorial {
         height: 100vh;
         margin-top: 4rem;    
+    }
+
+    .section-tutorial__timeline {
+        padding-top: 5rem;
     }
 }

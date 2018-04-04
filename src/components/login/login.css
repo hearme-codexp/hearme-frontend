@@ -45,18 +45,18 @@
 /* .input-login {
     font-size: 2px;
 } */
-
+/* 
 .button {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 2.3rem;
-}
+} */
 
 .tamanho { 
     width: 100%;
 }
-
+/* 
 .button__create {
     font-family: 'Roboto Condensed', sans-serif;    
     background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0);
@@ -66,7 +66,7 @@
     color: #fff;
     border-radius: 0;
     margin: 0;
-}
+} */
 
 .item-button {
     width: 100%;
