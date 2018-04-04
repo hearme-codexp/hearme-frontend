@@ -171,10 +171,10 @@ class RegistrationForm extends React.Component {
         </FormItem>
         <FormItem
           {...formItemLayout}
-          label="Genre"
+          label="Gender"
         >
-          {getFieldDecorator('genre', {
-            rules: [{ required: true, message: 'Please select your genre!' }],
+          {getFieldDecorator('gender', {
+            rules: [{ required: true, message: 'Please select your gender!' }],
           })(
             <Select style={{ width: '30%' }}>
                 <Option value="Female">Female</Option>

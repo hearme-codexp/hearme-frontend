@@ -7,9 +7,17 @@
     color: #fff;
 }
 
+.section-team__timeline {
+    padding-top: 3rem;
+}
+
 @media (min-width: 768px) {
 
     .section-team {
         padding: 4rem 0; 
+    }
+
+    .section-team__timeline {
+        padding-top: 5rem;
     }
 }
