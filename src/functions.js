@@ -1,7 +1,8 @@
+import { notification } from 'antd';
 
 let isAuthenticated = true;
 
-export function fakeAuth (){
+export function fakeAuth() {
     return isAuthenticated;
 }
 
@@ -15,14 +16,10 @@ export function signout(cb) {
     setTimeout(cb, 100)
 }
 
-// export function login () {
-//    return authenticate(() => true)
-// }
+export function openNotification(props) {
+    notification.open({message: props.message, description: props.description});
+};
 
-
-//   login = () => {
-//     authenticate(() => {
-//       this.setState(() => ({
-//         redirectToReferrer: true
-//       }))
-//     })
+// export function login () {    return authenticate(() => true) }   login = ()
+// => {     authenticate(() => {       this.setState(() => ({
+// redirectToReferrer: true       }))     })

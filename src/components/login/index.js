@@ -7,17 +7,9 @@ import { authenticate } from '../../functions'
 import PrivateRoute from '../privateRoute'
 import Home from '../page/home'
 import axios from 'axios'
+import { openNotification } from '../../functions'
 
 const FormItem = Form.Item;
-// axios.defaults.baseURL = 'https://hearme-app.herokuapp.com/';
-// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-
-const openNotification = (props) => {
-  notification.open({
-    message: props.message,
-    description: props.description
-  });
-};
 
 class Login extends React.Component {
   state = {
@@ -25,12 +17,6 @@ class Login extends React.Component {
   }
 
   login = (values) => {
-    // authenticate(() => {
-    //   this.setState(() => ({
-    //     redirectToReferrer: true
-    //   }))
-    // })
-
     axios.post('api/Usuario/Login', { email: values.userName, senha: values.password})
     .then(response => {
         console.log("Logged");
