@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="theme-color" content="#000000">
-    
-    <!--/
+
+<head>
+  <meta charset="utf-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#000000">
+
+  <!--/
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkztZV6Py0-LpJVYmSJ3gT_DmMWq0M6Iw"></script> -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkztZV6Py0-LpJVYmSJ3gT_DmMWq0M6Iw"></script> -->
 
   <!-- Bootstrap core CSS -->
   <link href="%PUBLIC_URL%/template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -63,19 +64,20 @@
 
   <script>
     $(document).ready(function () {
-      
       var tamanhoPageWrap = $("#page-wrap").height();
       $(window).scroll(function () {
-        var pagewidth = $(window).width();
-        var shrinkSize = tamanhoPageWrap - 100;
-        if(pagewidth <= 768){
-          var pageHeight = $(window).height()
-          shrinkSize = tamanhoPageWrap - (pageHeight / 2) + 16;
-        }
-        if ($(document).scrollTop() > (tamanhoPageWrap - 100)) {
-          $('nav').addClass('shrink');
-        } else {
-          $('nav').removeClass('shrink');
+        if ($(document).find(".header_shrink").length > 0) {
+          var pagewidth = $(window).width();
+          var shrinkSize = tamanhoPageWrap - 100;
+          if (pagewidth <= 768) {
+            var pageHeight = $(window).height()
+            shrinkSize = tamanhoPageWrap - (pageHeight / 2) + 16;
+          }
+          if ($(document).scrollTop() > (tamanhoPageWrap - 100)) {
+            $('nav').addClass('shrink');
+          } else {
+            $('nav').removeClass('shrink');
+          }
         }
       });
     })
@@ -83,4 +85,3 @@
 </body>
 
 </html>
-
