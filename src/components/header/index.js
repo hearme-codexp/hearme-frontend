@@ -4,38 +4,89 @@ import './header.css';
 import logo from './logo-hearme-02.png'
 import { withRouter, BrowserRouter as Router, Route, Link } from "react-router-dom";
 import $ from 'jquery'
+import { height } from "window-size";
 
 class Header extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            pageHeight: 0
+        }
+    }
+
+    componentDidMount() {
+        console.log("header mounted")
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        // If we have a snapshot value, we've just added new items.
+        // Adjust scroll so these new items don't push the old ones out of view.
+        if (snapshot !== null) {
+            console.log(window.location);
+        }
+    }
+
+    //  handleScroll(event) {
+    //     let scrollTop = event.srcElement.body.scrollTop,
+    //         itemTranslate = Math.min(0, scrollTop/3 - 60);
+
+    //     this.setState({
+    //       pageHeight: itemTranslate
+    //     });
+    // }
+
+    // changeMenu =() => {
+    //         var tamanhoPageWrap = $("#page-wrap").height();
+    //         $(window).scroll(function () {
+    //           var pagewidth = $(window).width();
+    //           var shrinkSize = tamanhoPageWrap - 100;
+    //           if(pagewidth <= 768){
+    //             var pageHeight = $(window).height()
+    //             shrinkSize = tamanhoPageWrap - (pageHeight / 2) + 16;
+    //           }
+    //           if ($(document).scrollTop() > (tamanhoPageWrap - 100)) {
+    //             $('nav').addClass('shrink');
+    //           } else {
+    //             $('nav').removeClass('shrink');
+    //           }
+    //         });
+    // }
+
     componentWillReceiveProps(nextProps) {
         console.log(nextProps)
         const { location } = nextProps
         // if (this.props.location.pathname == "/") {
-            // var tamanhoPageWrap = $("#page-wrap").height();
+        // var tamanhoPageWrap = $("#page-wrap").height();
 
-            // $(window).scroll(function () {
-            //     var pagewidth = $(window).width();
-            //     var shrinkSize = tamanhoPageWrap - 100;
-            //     if (pagewidth <= 768) {
-            //         var pageHeight = $(window).height()
-            //         shrinkSize = tamanhoPageWrap - (pageHeight / 2) + 16;
-            //     }
-            //     if ($(document).scrollTop() > (tamanhoPageWrap - 100)) {
-            //         $('nav').addClass('shrink');
-            //     } else {
-            //         console.log(location.pathname)
-            //         console.log(location.pathname == "/")
-            //         if (location.pathname == "/") {
-            //             $('nav').removeClass('shrink');
-            //         }
-            //     }
-            // });
+        // $(window).scroll(function () {
+        //     var pagewidth = $(window).width();
+        //     var shrinkSize = tamanhoPageWrap - 100;
+        //     if (pagewidth <= 768) {
+        //         var pageHeight = $(window).height()
+        //         shrinkSize = tamanhoPageWrap - (pageHeight / 2) + 16;
+        //     }
+        //     if ($(document).scrollTop() > (tamanhoPageWrap - 100)) {
+        //         $('nav').addClass('shrink');
+        //     } else {
+        //         console.log(location.pathname)
+        //         console.log(location.pathname == "/")
+        //         if (location.pathname == "/") {
+        //             $('nav').removeClass('shrink');
+        //         }
+        //     }
+        // });
         // }
     }
 
     render() {
         return (
-            <header>
-                <nav className={classnames("navbar navbar-expand-md navbar-dark fixed-top bg-dark", {'shrink': this.props.location.pathname != "/"})}>
+            <header className={this.props.headerShrink ? "header_shrink" : ""}>
+                <nav className={classnames("navbar navbar-expand-md navbar-dark fixed-top bg-dark", { 'shrink': this.props.location.pathname != "/" })}>
                     <Link to="/" className="home-button"><img src={logo} className="hearme" /></Link>
                     {/* <img src={logo} className="hearme"/> */}
                     {/* <a className="navbar-brand" href="#">  </a> */}

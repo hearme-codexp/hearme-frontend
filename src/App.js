@@ -75,8 +75,20 @@ import { fakeAuth } from './functions.js'
 
 class App extends Component {
  
-  state ={
-    isAuthenticated : false
+  constructor(props){
+    super(props);
+
+    this.state ={
+      isAuthenticated : false,
+      location: window.location.pathname
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot){
+    console.log(window.location.pathname);
+    this.setState({
+      location: window.location.pathname
+    })
   }
   // fakeAuth = {
   //   isAuthenticated: false,
@@ -111,9 +123,9 @@ class App extends Component {
     return (
       <Router>
         <React.Fragment>
-          <Header />
+          <Header headerShrink={this.state.location == "/"} />
           <main className="section">
-            <Route exact path="/login"  render={(props) => <Login {...props} onLogin={() => {
+            <Route exact path="/login" render={(props) => <Login {...props} onLogin={() => {
               self.setState({isAuthenticated : true})}}></Login>}   />
             <Route path="/register" component={RegisterForm} />
             <Route exact path="/" component={LandingPage} />
