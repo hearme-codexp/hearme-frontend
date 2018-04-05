@@ -9,107 +9,24 @@ import Header from './components/header'
 import Footer from './components/footer'
 import PrivateRoute from './components/privateRoute'
 import { fakeAuth } from './functions.js'
-
-// const fakeAuth = {
-//   isAuthenticated: false,
-//   authenticate(cb) {
-//     this.isAuthenticated = true
-//     setTimeout(cb, 100)
-//   },
-//   signout(cb) {
-//     this.isAuthenticated = false
-//     setTimeout(cb, 100)
-//   }
-// }
-
-// const AuthButton = withRouter(({ history }) => (
-//   fakeAuth.isAuthenticated ? (
-//     <p>
-//       Welcome! <button onClick={() => {
-//         fakeAuth.signout(() => history.push('/'))
-//       }}>Sign out</button>
-//     </p>
-//   ) : (
-//     <p>You are not logged in.</p>
-//   )
-// ))
-
-// class Login extends React.Component {
-//   state = {
-//     redirectToReferrer: false
-//   }
-//   login = () => {
-//     fakeAuth.authenticate(() => {
-//       this.setState(() => ({
-//         redirectToReferrer: true
-//       }))
-//     })
-//   }
-//   render() {
-//     const { from } = this.props.location.state || { from: { pathname: '/home' } }
-//     const { redirectToReferrer } = this.state
-
-//     if (redirectToReferrer === true) {
-//       return <Redirect to={from} />
-//     }
-
-//     return (
-//       <div>
-//         <p>You must log in to view the page</p>
-//         <button onClick={this.login}>Log in</button>
-//       </div>
-//     )
-//   }
-// }
-
-// const PrivateRoute = ({ component: Component, ...rest }) => (
-//   <Route {...rest} render={(props) => (
-//     fakeAuth.isAuthenticated === true
-//       ? <Component {...props} />
-//       : <Redirect to={{
-//           pathname: '/login',
-//           state: { from: props.location }
-//         }} />
-//   )} />
-// )
+import { browserHistory } from 'react-router';
 
 class App extends Component {
  
   state ={
     isAuthenticated : false
   }
-  // fakeAuth = {
-  //   isAuthenticated: false,
-  //   authenticate(cb) {
-  //     this.isAuthenticated = true
-  //     setTimeout(cb, 100)
-  //   },
-  //   signout(cb) {
-  //     this.isAuthenticated = false
-  //     setTimeout(cb, 100)
-  //   }
-  // }
-
-  // login = () => {
-  //   fakeAuth.authenticate(() => {
-  //     this.setState(() => ({
-  //       redirectToReferrer: true
-  //     }))
-  //   })
-  // }
-
-  // state = {
-  //   isAuthenticated: false
-  // }
-
-  // login = () => {
-  //   this.setState(() => { isAuthenticated : true })
-  // }
-
+  
+  handlerChange = () => {
+    browserHistory.listen( location =>  {
+      
+     });
+  }
+  
   render() {
     const self = this;
     return (
-      <Router>
+      <Router onChange={handlerChange}>
         <React.Fragment>
           <Header />
           <main className="section">
