@@ -2,6 +2,10 @@
     /* margin: 10rem; */
 }
 
+.title {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
 .graphic {
     background-color: #3a0024;
 }
