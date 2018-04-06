@@ -7,6 +7,10 @@ nav.navbar.fixed-top {
     overflow: hidden;
 }
 
+header.withPadding {
+    padding-top: 2rem;
+}
+
 body nav.shrink.bg-dark {
     background: linear-gradient(to bottom right, #150026, #150026, #3a0024);
 }
@@ -52,15 +56,13 @@ input.form-control.mr-sm-2 {
     background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0);
 }
 
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
   
-    img.hearme {
-      width: 15%;
+    header.withPadding {
+        padding-top: 3rem;
     }
 }
 
 @media (min-width: 1024px) {
-    img.hearme {
-        width: 10%;
-      }
-} */
+    
+}

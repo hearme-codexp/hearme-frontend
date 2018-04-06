@@ -6,7 +6,7 @@
   }  
   
   .home-button{
-    width: 10%;
+    width: 30%;
     height: 100%;
   }
 
@@ -26,4 +26,7 @@
       text-align: unset;
     }
 
+    .home-button{
+      width: 10%;
+    }
   }

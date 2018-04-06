@@ -4,38 +4,20 @@ import './header.css';
 import logo from './logo-hearme-02.png'
 import { withRouter, BrowserRouter as Router, Route, Link } from "react-router-dom";
 import $ from 'jquery'
+import { height } from "window-size";
 
 class Header extends React.Component {
-    componentWillReceiveProps(nextProps) {
-        console.log(nextProps)
-        const { location } = nextProps
-        // if (this.props.location.pathname == "/") {
-            // var tamanhoPageWrap = $("#page-wrap").height();
-
-            // $(window).scroll(function () {
-            //     var pagewidth = $(window).width();
-            //     var shrinkSize = tamanhoPageWrap - 100;
-            //     if (pagewidth <= 768) {
-            //         var pageHeight = $(window).height()
-            //         shrinkSize = tamanhoPageWrap - (pageHeight / 2) + 16;
-            //     }
-            //     if ($(document).scrollTop() > (tamanhoPageWrap - 100)) {
-            //         $('nav').addClass('shrink');
-            //     } else {
-            //         console.log(location.pathname)
-            //         console.log(location.pathname == "/")
-            //         if (location.pathname == "/") {
-            //             $('nav').removeClass('shrink');
-            //         }
-            //     }
-            // });
-        // }
+    constructor(props) {
+        super(props);
+        this.state = {
+            pageHeight: 0
+        }
     }
 
     render() {
         return (
-            <header>
-                <nav className={classnames("navbar navbar-expand-md navbar-dark fixed-top bg-dark", {'shrink': this.props.location.pathname != "/"})}>
+            <header className={this.props.headerShrink ? "header_shrink" : "withPadding"}>
+                <nav className={classnames("navbar navbar-expand-md navbar-dark fixed-top bg-dark", {"shrink": !this.props.headerShrink})}>
                     <Link to="/" className="home-button"><img src={logo} className="hearme" /></Link>
                     {/* <img src={logo} className="hearme"/> */}
                     {/* <a className="navbar-brand" href="#">  </a> */}
@@ -56,12 +38,9 @@ class Header extends React.Component {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/home">Home</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/footer">Footer</Link>
-                            </li>
                         </ul>
                         <form className="form-inline mt-2 mt-md-0">
-                            <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
+                            {/* <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" /> */}
                             <Link to="/login" className="btn btn-outline-success my-2 my-sm-0">Sign In</Link>
                         </form>
                     </div>
