@@ -3,7 +3,6 @@ import classnames from 'classnames'
 import './header.css';
 import logo from './logo-hearme-02.png'
 import { withRouter, BrowserRouter as Router, Route, Link } from "react-router-dom";
-import $ from 'jquery'
 
 class Header extends React.Component {
     componentWillReceiveProps(nextProps) {
