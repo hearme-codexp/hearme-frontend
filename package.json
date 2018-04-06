@@ -37,7 +37,6 @@
     "@storybook/react": "^3.3.14",
     "react-chartjs": "^1.2.0"
   },
-  "homepage": "http://hearme.surge.sh",
   "plugins": [
     [
       "import",
