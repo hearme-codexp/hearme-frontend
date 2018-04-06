@@ -2,7 +2,7 @@
     padding: 2rem 0; 
 }
 
-.social-link:hover, .social-link::selection {
+.social-link:hover, .social-link::selection, .social-link:active, .social-link:focus {
     background: linear-gradient(to bottom right, #007AF3, #007AF3, #00DFF0) !important;
     color: #fff;
 }

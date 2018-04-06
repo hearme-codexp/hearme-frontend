@@ -35,12 +35,12 @@ class Team extends Component {
                                 <p className="text-muted">Mobile</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">
-                                        <a href="https://github.com/BruLekichLouro" className="social-link">
+                                        <a href="https://github.com/BruLekichLouro" className="social-link" target="_blank" >
                                             <i className="fa fa-github"></i>
                                         </a>
                                     </li>
                                     <li className="list-inline-item">
-                                        <a href="https://www.linkedin.com/in/bruna-lekich-louro/" className="social-link">
+                                        <a href="https://www.linkedin.com/in/bruna-lekich-louro/" className="social-link" target="_blank" >
                                             <i className="fa fa-linkedin"></i>
                                         </a>
                                     </li>
@@ -54,12 +54,12 @@ class Team extends Component {
                                 <p className="text-muted">Front-End</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">
-                                        <a href="https://github.com/bruno-alencar" className="social-link">
+                                        <a href="https://github.com/bruno-alencar" className="social-link" target="_blank" >
                                             <i className="fa fa-github"></i>
                                         </a>
                                     </li>
                                     <li className="list-inline-item">
-                                        <a href="https://www.linkedin.com/in/bruno-alencar/" className="social-link">
+                                        <a href="https://www.linkedin.com/in/bruno-alencar/" className="social-link" target="_blank" >
                                             <i className="fa fa-linkedin"></i>
                                         </a>
                                     </li>
@@ -73,12 +73,12 @@ class Team extends Component {
                                 <p className="text-muted">Back-End</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">
-                                        <a href="https://github.com/duuhsousa" className="social-link">
+                                        <a href="https://github.com/duuhsousa" className="social-link" target="_blank" >
                                             <i className="fa fa-github"></i>
                                         </a>
                                     </li>
                                     <li className="list-inline-item">
-                                        <a href="https://www.linkedin.com/in/eduardo-lima-33aaba42/" className="social-link">
+                                        <a href="https://www.linkedin.com/in/eduardo-lima-33aaba42/" className="social-link" target="_blank" >
                                             <i className="fa fa-linkedin"></i>
                                         </a>
                                     </li>
@@ -92,12 +92,12 @@ class Team extends Component {
                                 <p className="text-muted">IoT</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">
-                                        <a href="https://github.com/jvtsp" className="social-link">
+                                        <a href="https://github.com/jvtsp" className="social-link" target="_blank" >
                                             <i className="fa fa-github"></i>
                                         </a>
                                     </li>
                                     <li className="list-inline-item">
-                                        <a href="#" className="social-link">
+                                        <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-silva-59a643130/" className="social-link" target="_blank" >
                                             <i className="fa fa-linkedin"></i>
                                         </a>
                                     </li>
@@ -111,12 +111,12 @@ class Team extends Component {
                                 <p className="text-muted">Front-End</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">
-                                        <a href="https://github.com/rosaju" className="social-link">
+                                        <a href="https://github.com/rosaju" className="social-link" target="_blank" >
                                             <i className="fa fa-github"></i>
                                         </a>
                                     </li>
                                     <li className="list-inline-item">
-                                        <a href="https://www.linkedin.com/in/rosaju/" className="social-link">
+                                        <a href="https://www.linkedin.com/in/rosaju/" className="social-link" target="_blank">
                                             <i className="fa fa-linkedin"></i>
                                         </a>
                                     </li>
@@ -130,12 +130,12 @@ class Team extends Component {
                                 <p className="text-muted">Back-End</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">
-                                        <a href="https://github.com/nailaferrante" className="social-link">
+                                        <a href="https://github.com/nailaferrante" className="social-link" target="_blank" >
                                             <i className="fa fa-github"></i>
                                         </a>
                                     </li>
                                     <li className="list-inline-item">
-                                        <a href="https://www.linkedin.com/in/nailaferrante/" className="social-link">
+                                        <a href="https://www.linkedin.com/in/nailaferrante/" className="social-link" target="_blank" >
                                             <i className="fa fa-linkedin"></i>
                                         </a>
                                     </li>
@@ -149,12 +149,12 @@ class Team extends Component {
                                 <p className="text-muted">Mobile</p>
                                 <ul className="list-inline social-buttons">
                                     <li className="list-inline-item">
-                                        <a href="https://github.com/vteodoro" className="social-link">
+                                        <a href="https://github.com/vteodoro" className="social-link" target="_blank" >
                                             <i className="fa fa-github"></i>
                                         </a>
                                     </li>
                                     <li className="list-inline-item">
-                                        <a href="https://www.linkedin.com/in/vteodoro/" className="social-link">
+                                        <a href="https://www.linkedin.com/in/vteodoro/" className="social-link" target="_blank"     >
                                             <i className="fa fa-linkedin"></i>
                                         </a>
                                     </li>
