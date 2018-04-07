@@ -3,7 +3,9 @@ import {
     BrowserRouter as Router,
     Route,
     Link
-} from 'react-router-dom'
+
+  } from 'react-router-dom'
+import About from './home_components/about'
 import Tutorial from './home_components/tutorial'
 import Team from './home_components/team';
 import Footer from '../../footer'
@@ -44,14 +46,19 @@ class LandingPage extends React.Component {
                                 <Link to="/register" className="button button__create">
                                     Sign Up
                         </Link>
-                            </div>
-                            {/* <div className="background" /> */}
-                            {/* {this.state.width <= 768 ? <img src={streetMobile} className="background" /> : null}                    */}
-                        </div>
+
+                    </div>
+                    {/* <div className="background" /> */}
+                    {/* {this.state.width <= 768 ? <img src={streetMobile} className="background" /> : null}                    */}
+                </div>
+
+                <About />                
+         
                         <div className="section__tutorial">
                             <Tutorial />
                         </div>
                         <Team />
+
 
                         <Footer />
 

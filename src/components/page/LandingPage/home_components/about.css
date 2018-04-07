@@ -1,0 +1,40 @@
+.section-about {
+    padding: 3rem 0;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.watch-container {
+    padding: 0 !important;
+}
+
+.img-about {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+
+    .about-container {
+        flex-direction: row;
+    }
+
+    .text-container {
+        padding-left: 3rem;
+    }
+
+    .img-about {
+        margin-top: 0rem;
+    }
+    
+}
