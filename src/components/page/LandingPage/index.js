@@ -4,6 +4,7 @@ import {
     Route,
     Link
   } from 'react-router-dom'
+import About from './home_components/about'
 import Tutorial from './home_components/tutorial'
 import Team from './home_components/team';
 import Footer from '../../footer'
@@ -45,6 +46,8 @@ class LandingPage extends React.Component {
                     {/* {this.state.width <= 768 ? <img src={streetMobile} className="background" /> : null}                    */}
                 </div>
 
+                <About />
+                
                 <Tutorial />
                 
                 <Team />
