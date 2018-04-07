@@ -24,12 +24,16 @@ class Login extends React.Component {
         console.log("Logged", response);
         this.props.onLogin();
         this.setState({ redirectToReferrer: true })
-        openNotification({ message: `Wellcome ${response.data.nome}!`, description: `You are able to see all of alerts stories.` });
+        openNotification({ message: `Wellcome ${response.data.nome}!`,
+           description: `You are able to see all of alerts stories.`,
+           duration:3  });
       })
       .catch(error => {
         console.log('Error: User', error.data);
         // openNotification({message: `ERROR: ${error}`, description: `Please, correct the error, and try again.`});
-        openNotification({ message: `ERROR: User or password entered not valid`, description: `Please, correct the error, and try again.` });
+        openNotification({ message: `ERROR: User or password entered not valid`,
+         description: `Please, correct the error, and try again.`,
+        duration:3 });
       });
 
   }

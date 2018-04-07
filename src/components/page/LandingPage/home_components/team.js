@@ -9,14 +9,6 @@ import JoaoVitor from './Joao.jpg'
 import EduardoLima from './Eduardo.jpg'
 
 class Team extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-
-        }
-    }
-
     render() {
         return (
             <section className="bg-light section-team" id="team">

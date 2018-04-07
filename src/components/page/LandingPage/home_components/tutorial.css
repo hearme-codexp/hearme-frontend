@@ -1,4 +1,3 @@
-
 .end-tutorial {
     color: #fff;
 }
@@ -19,19 +18,23 @@
 
 .section-tutorial__timeline {
     padding-top: 3rem;
+    padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    .section-heading {
+        font-size: 28px !important;
+    }
 }
 
 @media (min-width: 768px) {
-
     .section-tutorial {
-        padding-top: 4rem; 
+        padding-top: 4rem;
     }
-
     .img-tutorial {
         height: 100vh;
-        margin-top: 4rem;    
+        margin-top: 4rem;
     }
-
     .section-tutorial__timeline {
         padding-top: 5rem;
     }

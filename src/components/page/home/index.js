@@ -41,13 +41,17 @@ class Home extends React.Component {
 
         axios.get('api/Historico/cliente/Graph/1')
             .then(response => {
-                console.log(response);
-                this.setState(prevState => ({ ...prevState, graphicData: response.data }));
-                openNotification({ message: `Graph: You can what happened with you!`, description: `24h hours of alerts on graph.` });
+                // console.log(response);
+                this.setState({ graphicData: response.data });
+                openNotification({ message: `Graph: You can see where you had alerts!`,
+                 description: `24h hours of alerts on graph.`,
+                 duration:3  });
             })
             .catch(error => {
                 console.log('Error', error);
-                openNotification({ message: `ERROR: Graph data not found`, description: `Please, check your internet access and retry again later.` });
+                openNotification({ message: `ERROR: Graph data not found`,
+                 description: `Please, check your internet access and retry again later.`,
+                 duration:3  });
             });
     }
 
