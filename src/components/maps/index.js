@@ -35,7 +35,8 @@ const MapWithAMarkerClusterer = compose(
     <MarkerClusterer
       onClick={props.onMarkerClustererClick}
       averageCenter
-      // enableRetinaIcons
+      defaultAverageCenter={true}
+      enableRetinaIcons
       gridSize={60}
     >
       {props.markers.map(marker => (
