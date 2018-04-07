@@ -17,7 +17,10 @@ export function signout(cb) {
 }
 
 export function openNotification(props) {
-    notification.open({message: props.message, description: props.description});
+    notification.open({message: props.message, description: props.description,  
+        style: {
+            marginTop: 50   
+      },});
 };
 
 // export function login () {    return authenticate(() => true) }   login = ()

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import tutorial from './tutorial.jpg'
 import './tutorial.css'
-
+import download from './img/download.png'
+import airplane from './img/airplane.png'
+import person from './img/person.png'
+import radio from './img/radio.png'
 
 class Tutorial extends Component {
     constructor(props) {
@@ -27,7 +30,7 @@ class Tutorial extends Component {
                             <ul className="timeline">
                                 <li>
                                     <div className="timeline-image">
-                                        <img className="rounded-circle img-fluid" src="template/img/about/1.jpg" alt="" />
+                                        <img className="rounded-circle img-fluid" src={download} alt="" />
                                     </div>
                                     <div className="timeline-panel">
                                         <div className="timeline-heading">
@@ -42,7 +45,7 @@ class Tutorial extends Component {
                                 </li>
                                 <li className="timeline-inverted">
                                     <div className="timeline-image">
-                                        <img className="rounded-circle img-fluid" src="template/img/about/2.jpg" alt="" />
+                                        <img className="rounded-circle img-fluid" src={person} alt="" />
                                     </div>
                                     <div className="timeline-panel">
                                         <div className="timeline-heading">
@@ -57,7 +60,7 @@ class Tutorial extends Component {
                                 </li>
                                 <li>
                                     <div className="timeline-image">
-                                        <img className="rounded-circle img-fluid" src="template/img/about/3.jpg" alt="" />
+                                        <img className="rounded-circle img-fluid" src={radio} alt="" />
                                     </div>
                                     <div className="timeline-panel">
                                         <div className="timeline-heading">
@@ -81,7 +84,7 @@ class Tutorial extends Component {
                                 </li>
                                 <li className="timeline-inverted">
                                     <div className="timeline-image">
-                                        <img className="rounded-circle img-fluid" src="template/img/about/4.jpg" alt="" />
+                                        <img className="rounded-circle img-fluid" src={airplane} alt="" />
                                     </div>
                                     <div className="timeline-panel">
                                         <div className="timeline-heading">

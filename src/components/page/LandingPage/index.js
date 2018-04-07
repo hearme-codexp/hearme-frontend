@@ -3,6 +3,7 @@ import {
     BrowserRouter as Router,
     Route,
     Link
+
   } from 'react-router-dom'
 import About from './home_components/about'
 import Tutorial from './home_components/tutorial'
@@ -13,6 +14,7 @@ import street from './street.jpg'
 import streetMobile from './street-mobile.jpg'
 import './landing.css'
 import '../../Button/button.css'
+import Header from '../../header'
 
 
 class LandingPage extends React.Component {
@@ -34,28 +36,35 @@ class LandingPage extends React.Component {
 
     render() {
         return (
-            <div>
-                <div id="page-wrap" className="background" >
-                    <div className="logo-container">
-                        <img src={logo} className="logo" />
-                        <Link to="/register" className="button button__create">
-                            Sign Up
+            <React.Fragment>
+                <Header headerShrink={true} />
+                <main className="section">
+                    <div>
+                        <div id="page-wrap" className="background" >
+                            <div className="logo-container">
+                                <img src={logo} className="logo" />
+                                <Link to="/register" className="button button__create">
+                                    Sign Up
                         </Link>
+
                     </div>
                     {/* <div className="background" /> */}
                     {/* {this.state.width <= 768 ? <img src={streetMobile} className="background" /> : null}                    */}
                 </div>
 
-                <About />
-                
-                <Tutorial />
-                
-                <Team />
-                
-                <Footer />
+                <About />                
+         
+                        <div className="section__tutorial">
+                            <Tutorial />
+                        </div>
+                        <Team />
 
-            </div>
 
+                        <Footer />
+
+                    </div>
+                </main>
+            </React.Fragment>
         )
     }
 }

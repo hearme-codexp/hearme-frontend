@@ -1,4 +1,5 @@
 import React from 'react'
+import './maps.css';
 const { compose, withProps, withHandlers } = require("recompose");
 const {
   withScriptjs,
@@ -11,9 +12,9 @@ const demoFancyMapStyles = require("./demoFancyMapStyles.json");
 
 const MapWithAMarkerClusterer = compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCS8KIWpVjNHMryUXYXKY4nZZnfFoO8nlY&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
+    containerElement: <div style={{ height: `70vh` }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
   withHandlers({
@@ -34,7 +35,7 @@ const MapWithAMarkerClusterer = compose(
     <MarkerClusterer
       onClick={props.onMarkerClustererClick}
       averageCenter
-      enableRetinaIcons
+      // enableRetinaIcons
       gridSize={60}
     >
       {props.markers.map(marker => (
@@ -76,7 +77,9 @@ class MapContainer extends React.PureComponent {
   render() {
       const { markers } = this.props;
     return (
-      <MapWithAMarkerClusterer markers={markers} initialMarker={this.setInitialMarker(markers)} />
+      <div className="teste">
+        <MapWithAMarkerClusterer markers={markers} initialMarker={this.setInitialMarker(markers)} />
+      </div>
     )
   }
 }

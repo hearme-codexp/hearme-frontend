@@ -2,8 +2,8 @@
     flex: 1;
 }
 
-teste {
-    padding: 5%;
+.teste {
+    box-shadow: 0 0 1em #857f8a;
 }
 .mapa {
     width: 50%;

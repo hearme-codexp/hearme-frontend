@@ -5,6 +5,7 @@ import Graphic from '../../graphic'
 import Loading from '../../loading'
 import './home.css'
 import { openNotification } from '../../../functions'
+import Header from '../../header'
 
 axios.defaults.baseURL = 'https://hearme-app.herokuapp.com/';
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -19,7 +20,7 @@ class Home extends React.Component {
         //     {latitude: -23.5612844, longitude: -46.6965538},
         // ]
         markers: [],
-        graphicData:[]
+        graphicData: []
     }
 
     componentWillMount() {
@@ -28,46 +29,53 @@ class Home extends React.Component {
 
     componentDidMount = () => {
         axios.get('api/Historico/cliente/1')
-        .then(response => {
-            // console.log(response);
-            this.setState(prevState => ({ ...prevState, markers: response.data}));
-            openNotification({message: `MAPS: You can what happened with you!`, description: `Join on map to verify alerts details.`});
-        })
-        .catch(error => {
-            console.log('Error', error);
-            openNotification({message: `ERROR: Map data not found`, description: `Please, check your internet access and retry again later.`});
-        });
+            .then(response => {
+                // console.log(response);
+                this.setState(prevState => ({ ...prevState, markers: response.data }));
+                openNotification({ message: `MAPS: You can what happened with you!`, description: `Join on map to verify alerts details.` });
+            })
+            .catch(error => {
+                console.log('Error', error);
+                openNotification({ message: `ERROR: Map data not found`, description: `Please, check your internet access and retry again later.` });
+            });
 
         axios.get('api/Historico/cliente/Graph/1')
-        .then(response => {
-            console.log(response);
-            this.setState(prevState => ({ ...prevState, graphicData: response.data}));
-            openNotification({message: `Graph: You can what happened with you!`, description: `24h hours of alerts on graph.`});
-        })
-        .catch(error => {
-            console.log('Error', error);
-            openNotification({message: `ERROR: Graph data not found`, description: `Please, check your internet access and retry again later.`});
-        });
+            .then(response => {
+                // console.log(response);
+                this.setState({ graphicData: response.data });
+                openNotification({ message: `Graph: You can see where you had alerts!`,
+                 description: `24h hours of alerts on graph.`,
+                 duration:3  });
+            })
+            .catch(error => {
+                console.log('Error', error);
+                openNotification({ message: `ERROR: Graph data not found`,
+                 description: `Please, check your internet access and retry again later.`,
+                 duration:3  });
+            });
     }
-        
-    render(){
+
+    render() {
         const loading = <div className='load'><Loading /></div>;
-        const maps = <Maps markers={this.state.markers}/>;
-        const graph= <Graphic graphicData={this.state.graphicData}/>;
+        const maps = <Maps markers={this.state.markers} />;
+        const graph = <Graphic graphicData={this.state.graphicData} />;
 
         const complete = (
             <React.Fragment>
-                        <div className="content">
-                            <div className="content__map">
-                                {this.state.markers.length > 0 ?  maps : loading}
-                            </div>
-                            <div className="content__graphic">
-                                 {this.state.graphicData.length > 0 ?  graph : loading}
-                            </div>
+                <Header headerShrink={false} />
+                <main className="section">
+                    <div className="content">
+                        <div className="content__map">
+                            {this.state.markers.length > 0 ? maps : loading}
                         </div>
+                        <div className="content__graphic">
+                            {this.state.graphicData.length > 0 ? graph : loading}
+                        </div>
+                    </div>
+                </main>
             </React.Fragment>
         );
-        
+
         return complete;
     }
 }

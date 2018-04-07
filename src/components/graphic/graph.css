@@ -2,16 +2,31 @@
     /* margin: 10rem; */
 }
 
-.title {
+/* .title {
     font-family: 'Roboto Condensed', sans-serif;
+} */
+
+
+.title {
+    padding: 2rem;
+}
+
+.graphic-chart {
+
 }
 
 .graphic {
-    background-color: #3a0024;
+    /* background-color: #3a0024; */
+    box-shadow: 0 0 1em #857f8a;
+    background: #f6f7f7;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
-
+/* 
 .title {
-    color: #FFF;
+    color: #857f8a;
     padding-bottom: 1rem;
     padding-top: 1rem;
-}
+} */

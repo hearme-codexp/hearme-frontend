@@ -16,22 +16,22 @@ class Graph extends React.Component {
       xAxes: [
         {
           gridLines: {
-            color: "rgba(255, 255, 255, 0.5)"
+            color: "#857f8a"
           },
           ticks: {
             beginAtZero: true,
-            fontColor: 'white'
+            fontColor: '#857f8a'
           }
         }
       ],
       yAxes: [
         {
           gridLines: {
-            color: "rgba(255, 255, 255, 0.5)"
+            color: "#857f8a"
           },
           ticks: {
             beginAtZero: true,
-            fontColor: 'white'
+            fontColor: '#857f8a'
           }
         }
       ]
@@ -49,7 +49,7 @@ class Graph extends React.Component {
     .getContext('2d');
 
   let gradient = ctx.createLinearGradient(0, 0, 0, 450);
-    gradient.addColorStop(0, 'blue');
+    gradient.addColorStop(0, '#007af3');
     gradient.addColorStop(0.5, '#B6DFF0');
     gradient.addColorStop(1, '#FFF');
 
@@ -72,10 +72,10 @@ class Graph extends React.Component {
       },
       datasets: [
         {
-          label: 'My First dataset',
+          label: 'Alerts quantity',
           lineTension: 0.1,
           backgroundColor: gradient,
-          borderColor: '#261635',
+          borderColor: '#007af3',
           borderCapStyle: 'butt',
           borderDash: [],
           borderDashOffset: 0.0,
@@ -96,10 +96,17 @@ class Graph extends React.Component {
   }
 
   render() {
-    return (<div className="graphic" >
-              <h2 className="title">Presentation</h2>
-              <Line ref="chart" data={this.state.data} options={this.options}/>
-            </div>
+    return (
+        <div>
+          
+          <div className="graphic" >
+              {/* <h2 className="title">Presentation</h2> */}
+                    <h1 className="section-heading title">Analyze the notifications with your personalized map or graphic</h1>
+              <div className="graphic-chart">
+                <Line ref="chart" data={this.state.data} options={this.options}/>
+              </div>
+          </div>
+        </div>
     );
   }
 }

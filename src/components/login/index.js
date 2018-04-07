@@ -8,6 +8,8 @@ import PrivateRoute from '../privateRoute'
 import Home from '../page/home'
 import axios from 'axios'
 import { openNotification } from '../../functions'
+import Header from '../header'
+
 
 const FormItem = Form.Item;
 
@@ -17,18 +19,22 @@ class Login extends React.Component {
   }
 
   login = (values) => {
-    axios.post('api/Usuario/Login', { email: values.userName, senha: values.password})
-    .then(response => {
+    axios.post('api/Usuario/Login', { email: values.userName, senha: values.password })
+      .then(response => {
         console.log("Logged", response);
         this.props.onLogin();
-        this.setState({redirectToReferrer: true})
-        openNotification({message: `Wellcome ${response.data.nome}!`, description: `You are able to see all of alerts stories.`});
-    })
-    .catch(error => {
-        console.log('Error: User', error.data); 
+        this.setState({ redirectToReferrer: true })
+        openNotification({ message: `Wellcome ${response.data.nome}!`,
+           description: `You are able to see all of alerts stories.`,
+           duration:3  });
+      })
+      .catch(error => {
+        console.log('Error: User', error.data);
         // openNotification({message: `ERROR: ${error}`, description: `Please, correct the error, and try again.`});
-        openNotification({message: `ERROR: User or password entered not valid`, description: `Please, correct the error, and try again.`});
-    });
+        openNotification({ message: `ERROR: User or password entered not valid`,
+         description: `Please, correct the error, and try again.`,
+        duration:3 });
+      });
 
   }
 
@@ -46,45 +52,49 @@ class Login extends React.Component {
     const { getFieldDecorator } = this.props.form;
     const { from } = this.props.location.state || { from: { pathname: '/' } }
     const { redirectToReferrer } = this.state
-    
+
     if (redirectToReferrer === true) {
       return <Redirect to={from} />
     }
-    
+
     return (
       <React.Fragment>
-      
-      <Form onSubmit={this.handleSubmit} className="login-form">
-        <FormItem className="tamanho">
-          {getFieldDecorator('userName', {
-            rules: [{ required: true, message: 'Please input your username!' }],
-          })(
-            <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username"/>
-          )}
-        </FormItem>
-        
-        <FormItem className="tamanho">
-          {getFieldDecorator('password', {
-            rules: [{ required: true, message: 'Please input your Password!' }],
-          })(
-            <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
-          )}
-        </FormItem>
+        <Header headerShrink={false} />
+        <main className="section">
+          <Form onSubmit={this.handleSubmit} className="login-form">
+            <FormItem className="tamanho">
+              {getFieldDecorator('userName', {
+                rules: [{ required: true, message: 'Please input your username!' }],
+              })(
+                <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+              )}
+            </FormItem>
 
-        <FormItem className="tamanho">
-          {getFieldDecorator('remember', {
-            valuePropName: 'checked',
-            initialValue: true,
-          })(
-            <Checkbox>Remember me</Checkbox>
-          )}
-          <a className="login-form-forgot" href="">Forgot password</a>
-          <Button type="primary" htmlType="submit" className="button button__create">
-            Log in
-          </Button>
-          Or <Link to="/register">register now!</Link>
-        </FormItem>
-      </Form>
+            <FormItem className="tamanho">
+              {getFieldDecorator('password', {
+                rules: [{ required: true, message: 'Please input your Password!' }],
+              })(
+                <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+              )}
+            </FormItem>
+
+            <FormItem className="tamanho">
+              {getFieldDecorator('remember', {
+                valuePropName: 'checked',
+                initialValue: true,
+              })(
+                <Checkbox>Remember me</Checkbox>
+              )}
+              <a className="login-form-forgot" href="">Forgot password</a>
+              <Button type="primary" htmlType="submit" className="button button__create">
+                Log in
+              </Button>
+              <br/>
+              Or <Link to="/register">register now!</Link>
+            </FormItem>
+          </Form>
+
+        </main>
       </React.Fragment>
     );
   }
