@@ -72,7 +72,7 @@ class Graph extends React.Component {
       },
       datasets: [
         {
-          label: 'My First dataset',
+          label: 'Alerts quantity',
           lineTension: 0.1,
           backgroundColor: gradient,
           borderColor: '#007af3',
@@ -96,10 +96,17 @@ class Graph extends React.Component {
   }
 
   render() {
-    return (<div className="graphic" >
-              <h2 className="title">Presentation</h2>
-              <Line ref="chart" data={this.state.data} options={this.options}/>
-            </div>
+    return (
+        <div>
+          
+          <div className="graphic" >
+              {/* <h2 className="title">Presentation</h2> */}
+                    <h1 className="section-heading title">Analyze the notifications with your personalized map or graphic</h1>
+              <div className="graphic-chart">
+                <Line ref="chart" data={this.state.data} options={this.options}/>
+              </div>
+          </div>
+        </div>
     );
   }
 }
