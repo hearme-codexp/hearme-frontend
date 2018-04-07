@@ -48,9 +48,9 @@ class LandingPage extends React.Component {
                             {/* <div className="background" /> */}
                             {/* {this.state.width <= 768 ? <img src={streetMobile} className="background" /> : null}                    */}
                         </div>
-
-                        <Tutorial />
-
+                        <div className="section__tutorial">
+                            <Tutorial />
+                        </div>
                         <Team />
 
                         <Footer />

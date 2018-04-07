@@ -2,9 +2,9 @@ import React from 'react'
 import Contact from '../contact'
 import './footer.css'
 import Header from '../header'
-import senai from './senai.png'
-import jpMorgan from './jpmorgan.png'
-import microsoft from './microsoft.png'
+import senai from './logo-senai.png'
+import jpMorgan from './logo-jpmorgan.png'
+import microsoft from './logo-microsoft.png'
 
 class Footer extends React.Component {
 
