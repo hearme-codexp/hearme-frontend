@@ -84,7 +84,8 @@ class Login extends React.Component {
               <a className="login-form-forgot" href="">Forgot password</a>
               <Button type="primary" htmlType="submit" className="button button__create">
                 Log in
-          </Button>
+              </Button>
+              <br/>
               Or <Link to="/register">register now!</Link>
             </FormItem>
           </Form>

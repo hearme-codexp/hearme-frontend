@@ -16,15 +16,14 @@ class App extends Component {
 
     this.state ={
       isAuthenticated : false,
-      location: window.location.pathname
+      // location: window.location.pathname
     }
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot){
-    console.log(window.location.pathname);
-    this.setState({
-      location: window.location.pathname
-    })
+  componentUpdate(prevProps, prevState, snapshot){
+    // this.setState({
+    //   location: window.location.pathname
+    // })
   }
 
   render() {
