@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Route, Redirect, Link, withRouter } from 'reac
 
 export default ({ component: Component, isAuthenticated: isAuthenticated, ...rest }) => (
     <Route {...rest} render={(props) => (
-      // isAuthenticated === true
-      true
+      isAuthenticated === true
         ? <Component {...props} />
         : <Redirect to={{
             pathname: '/login',
