@@ -13,7 +13,7 @@ We can hear too.
 
 [Preview](http://hearme.surge.sh)
 
-**To see the home page you need to create an user**
+**To see the home page you should create an user**
 
 # hearme-frontend
 Front end project realized during the Senai course, 
