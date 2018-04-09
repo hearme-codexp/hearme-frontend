@@ -15,7 +15,8 @@ const FormItem = Form.Item;
 
 class Login extends React.Component {
   state = {
-    redirectToReferrer: false
+    redirectToReferrer: false,
+    isAuthenticated: false
   }
 
   login = (values) => {
@@ -23,7 +24,7 @@ class Login extends React.Component {
       .then(response => {
         console.log("Logged", response);
         this.props.onLogin();
-        this.setState({ redirectToReferrer: true })
+        this.setState({ isAuthenticated:true, redirectToReferrer: true })
         openNotification({ message: `Wellcome ${response.data.nome}!`,
            description: `You are able to see all of alerts stories.`,
            duration:3  });
@@ -51,7 +52,7 @@ class Login extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     const { from } = this.props.location.state || { from: { pathname: '/' } }
-    const { redirectToReferrer } = this.state
+    const { redirectToReferrer, isAuthenticated } = this.state
 
     if (redirectToReferrer === true) {
       return <Redirect to={from} />
@@ -59,7 +60,7 @@ class Login extends React.Component {
 
     return (
       <React.Fragment>
-        <Header headerShrink={false} />
+        <Header headerShrink={false} isAuthenticated={isAuthenticated} />
         <main className="section">
           <Form onSubmit={this.handleSubmit} className="login-form">
             <FormItem className="tamanho">

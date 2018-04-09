@@ -62,7 +62,7 @@ class Home extends React.Component {
 
         const complete = (
             <React.Fragment>
-                <Header headerShrink={false} />
+                <Header headerShrink={false} isAuthenticated={true}/>
                 <main className="section">
                     <div className="content">
                         <div className="content__map">
