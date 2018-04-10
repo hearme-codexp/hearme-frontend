@@ -24,7 +24,7 @@ Front end project realized during the Senai course,
 - Android  [hearme-mobile](https://github.com/hearme-codexp/hearme-mobile)
 - C [hearme-iot](https://github.com/hearme-codexp/hearme-iot)
 
-## To run the Front-End project
+## To run Front-End project
 
 - You should install node js before
 
